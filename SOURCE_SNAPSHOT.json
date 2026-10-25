@@ -1,0 +1,12 @@
+{
+  "project": "Vocab Station",
+  "source_commit": "ed4200a98e78431039d3af94753ba537d155fd71",
+  "source_files": 171,
+  "additional_handoff_files": [
+    "SETUP.md",
+    "SECURITY.md",
+    "SOURCE_SNAPSHOT.json"
+  ],
+  "readme": "Project-specific GitHub handoff README replaces starter README in export only",
+  "export_files": 174
+}

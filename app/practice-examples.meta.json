@@ -1,0 +1,14 @@
+{
+  "entries": 3003,
+  "retrieved_on": "2026-10-25",
+  "upstream_repository": "https://github.com/ciwga/Oxford3000_Vocab",
+  "upstream_file": "oxford3000_vocabulary_with_collocations_and_definitions_datasets.csv",
+  "upstream_sha256": "a5848942e94e97e279c2d3597697a8372ff4f1f1dc0d12f0786d3d3fbd4a00b9",
+  "license": "MIT, Copyright (c) 2024 Mustafa D.",
+  "license_notice": "public/example-credits.txt",
+  "notes": [
+    "Upstream describes GPT-4-assisted dataset generation; not an official Oxford publication.",
+    "Missing entries and ambiguous word senses have Vocab Station teaching examples.",
+    "Pre-existing and administrator-authored sentences take priority."
+  ]
+}

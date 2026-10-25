@@ -1,0 +1,5 @@
+import {env} from 'cloudflare:workers';
+import {auth,readRecord,vocabulary} from '../../data-server';
+import {evaluateSentence} from '../../sentence-evaluator';
+import {wordKey} from '../../words';
+export async function POST(req:Request){const u=await auth();if(!u)return Response.json({error:'Sign in required'},{status:401});if(env.LEARNING_ENABLED!=='true')return Response.json({error:'Practice is not active'},{status:403});const state=await readRecord(u.userId,{});if(state.banned||state.deleted)return Response.json({error:'Account access disabled'},{status:403});try{const body=await req.text();if(body.length>10000)throw Error('Sentence is too long.');const d=JSON.parse(body);if(typeof d.text!=='string'||!d.text.trim()||d.text.length>1500)throw Error('Write a sentence of up to 1,500 characters.');const words=await vocabulary(u.userId);const word=words.find(w=>wordKey(w)===d.wordId);if(!word)throw Error('Vocabulary entry not found.');return Response.json(evaluateSentence(d.text,word));}catch(e:any){return Response.json({error:e.message||'Sentence could not be checked.'},{status:400});}}

@@ -1,0 +1,5 @@
+import {getChatGPTUser,chatGPTSignInPath} from '../chatgpt-auth';
+import {redirect} from 'next/navigation';
+import {ShieldCheck,ArrowRight} from 'lucide-react';
+export const dynamic='force-dynamic';
+export default async function Login(){if(await getChatGPTUser())redirect('/');return <main className="login-page"><a href="/" className="brand"><img className="brand-mark" src="/logo.svg" alt="VS monogram"/>Vocab Station</a><div className="login-intro"><span className="eyebrow">YOUR PERSONAL LEARNING SPACE</span><h1>Welcome to<br/>your next chapter.</h1><p>Your profile, weekly tests and practice history are ready when you are.</p></div><aside className="login-account-panel"><span className="eyebrow">YOUR ACCOUNT</span><h2>Start learning with your account.</h2><a className="primary login-cta" href={chatGPTSignInPath('/')} target="_top"><ShieldCheck size={19}/>Sign in / Sign up<ArrowRight size={19}/></a><p className="muted">Secure ChatGPT sign-in is supported now. Google sign-in is planned for later.</p></aside></main>}

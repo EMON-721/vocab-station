@@ -1,0 +1,1 @@
+declare module 'nspell' {type Spell={correct:(word:string)=>boolean;suggest:(word:string)=>string[];add:(word:string)=>Spell};export default function nspell(dictionary:{aff:string;dic:string}):Spell;}

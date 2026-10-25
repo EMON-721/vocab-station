@@ -1,0 +1,3618 @@
+{
+  "source_sha256": "35f40bb4da52df59b50dce7f0c2a7c06a74c0959597cbfc223d7c51186a0f874",
+  "numbered_entries": 722,
+  "new_entries": 563,
+  "existing_or_repeated_entries": 159,
+  "entries": [
+    {
+      "number": 1,
+      "word": "Abate",
+      "page": 1
+    },
+    {
+      "number": 2,
+      "word": "Aberrant",
+      "page": 1
+    },
+    {
+      "number": 3,
+      "word": "Abeyance",
+      "page": 1
+    },
+    {
+      "number": 4,
+      "word": "Abscond",
+      "page": 1
+    },
+    {
+      "number": 5,
+      "word": "Abstemious",
+      "page": 1
+    },
+    {
+      "number": 6,
+      "word": "Admonish",
+      "page": 1
+    },
+    {
+      "number": 7,
+      "word": "Adulterated",
+      "page": 1
+    },
+    {
+      "number": 8,
+      "word": "Aesthetic",
+      "page": 1
+    },
+    {
+      "number": 9,
+      "word": "Aggregate",
+      "page": 1
+    },
+    {
+      "number": 10,
+      "word": "Alacrity",
+      "page": 1
+    },
+    {
+      "number": 11,
+      "word": "Alleviate",
+      "page": 1
+    },
+    {
+      "number": 12,
+      "word": "Amalgamate",
+      "page": 1
+    },
+    {
+      "number": 13,
+      "word": "Ambiguous",
+      "page": 1
+    },
+    {
+      "number": 14,
+      "word": "Ameliorate",
+      "page": 1
+    },
+    {
+      "number": 15,
+      "word": "Anachronism",
+      "page": 1
+    },
+    {
+      "number": 16,
+      "word": "Analogous",
+      "page": 1
+    },
+    {
+      "number": 17,
+      "word": "Anarchy",
+      "page": 1
+    },
+    {
+      "number": 18,
+      "word": "Anomalous",
+      "page": 2
+    },
+    {
+      "number": 19,
+      "word": "Antipathy",
+      "page": 2
+    },
+    {
+      "number": 20,
+      "word": "Apathy",
+      "page": 2
+    },
+    {
+      "number": 21,
+      "word": "Appease",
+      "page": 2
+    },
+    {
+      "number": 22,
+      "word": "Apprise",
+      "page": 2
+    },
+    {
+      "number": 23,
+      "word": "Approbation",
+      "page": 2
+    },
+    {
+      "number": 24,
+      "word": "Appropriate",
+      "page": 2
+    },
+    {
+      "number": 25,
+      "word": "Arduous",
+      "page": 2
+    },
+    {
+      "number": 26,
+      "word": "Artless",
+      "page": 2
+    },
+    {
+      "number": 27,
+      "word": "Assigned",
+      "page": 2
+    },
+    {
+      "number": 28,
+      "word": "Ascetic",
+      "page": 2
+    },
+    {
+      "number": 29,
+      "word": "Assuage",
+      "page": 2
+    },
+    {
+      "number": 30,
+      "word": "Attenuate",
+      "page": 2
+    },
+    {
+      "number": 31,
+      "word": "Audacious",
+      "page": 2
+    },
+    {
+      "number": 32,
+      "word": "Austere",
+      "page": 2
+    },
+    {
+      "number": 33,
+      "word": "Autonomous",
+      "page": 2
+    },
+    {
+      "number": 34,
+      "word": "Aver",
+      "page": 3
+    },
+    {
+      "number": 35,
+      "word": "Banal",
+      "page": 3
+    },
+    {
+      "number": 36,
+      "word": "Belie",
+      "page": 3
+    },
+    {
+      "number": 37,
+      "word": "Beneficent",
+      "page": 3
+    },
+    {
+      "number": 38,
+      "word": "Bolster",
+      "page": 3
+    },
+    {
+      "number": 39,
+      "word": "Bombastic",
+      "page": 3
+    },
+    {
+      "number": 40,
+      "word": "Boorish",
+      "page": 3
+    },
+    {
+      "number": 41,
+      "word": "Burgeon",
+      "page": 3
+    },
+    {
+      "number": 42,
+      "word": "Boorish",
+      "page": 3
+    },
+    {
+      "number": 43,
+      "word": "Burnish",
+      "page": 3
+    },
+    {
+      "number": 44,
+      "word": "Buttress",
+      "page": 3
+    },
+    {
+      "number": 45,
+      "word": "Bound together",
+      "page": 3
+    },
+    {
+      "number": 46,
+      "word": "Break through",
+      "page": 3
+    },
+    {
+      "number": 47,
+      "word": "Budding",
+      "page": 3
+    },
+    {
+      "number": 48,
+      "word": "Bullying",
+      "page": 3
+    },
+    {
+      "number": 49,
+      "word": "Bygone",
+      "page": 3
+    },
+    {
+      "number": 50,
+      "word": "Abolish",
+      "page": 3
+    },
+    {
+      "number": 51,
+      "word": "Abruptly",
+      "page": 4
+    },
+    {
+      "number": 52,
+      "word": "Abundance",
+      "page": 4
+    },
+    {
+      "number": 53,
+      "word": "Accomplishment",
+      "page": 4
+    },
+    {
+      "number": 54,
+      "word": "Accountability",
+      "page": 4
+    },
+    {
+      "number": 55,
+      "word": "Accounted for",
+      "page": 4
+    },
+    {
+      "number": 56,
+      "word": "Acquisition",
+      "page": 4
+    },
+    {
+      "number": 57,
+      "word": "Advent",
+      "page": 4
+    },
+    {
+      "number": 58,
+      "word": "Afflict",
+      "page": 4
+    },
+    {
+      "number": 59,
+      "word": "Affluent",
+      "page": 4
+    },
+    {
+      "number": 60,
+      "word": "Ailing",
+      "page": 4
+    },
+    {
+      "number": 61,
+      "word": "Albeit",
+      "page": 4
+    },
+    {
+      "number": 62,
+      "word": "Alienation",
+      "page": 4
+    },
+    {
+      "number": 63,
+      "word": "Allegation",
+      "page": 4
+    },
+    {
+      "number": 64,
+      "word": "Ambivalent",
+      "page": 4
+    },
+    {
+      "number": 65,
+      "word": "Amplified",
+      "page": 4
+    },
+    {
+      "number": 66,
+      "word": "Ancestral",
+      "page": 4
+    },
+    {
+      "number": 67,
+      "word": "Apparently",
+      "page": 4
+    },
+    {
+      "number": 68,
+      "word": "Ascent",
+      "page": 5
+    },
+    {
+      "number": 69,
+      "word": "Ascertained",
+      "page": 5
+    },
+    {
+      "number": 70,
+      "word": "Astonishing",
+      "page": 5
+    },
+    {
+      "number": 71,
+      "word": "At stake",
+      "page": 5
+    },
+    {
+      "number": 72,
+      "word": "Attainment",
+      "page": 5
+    },
+    {
+      "number": 73,
+      "word": "Capricious",
+      "page": 5
+    },
+    {
+      "number": 74,
+      "word": "Castigation",
+      "page": 5
+    },
+    {
+      "number": 75,
+      "word": "Catalyst",
+      "page": 5
+    },
+    {
+      "number": 76,
+      "word": "Caustic",
+      "page": 5
+    },
+    {
+      "number": 77,
+      "word": "Chicanery",
+      "page": 5
+    },
+    {
+      "number": 78,
+      "word": "Coagulate",
+      "page": 5
+    },
+    {
+      "number": 79,
+      "word": "Coda",
+      "page": 5
+    },
+    {
+      "number": 80,
+      "word": "Commensurate",
+      "page": 5
+    },
+    {
+      "number": 81,
+      "word": "Compendium",
+      "page": 5
+    },
+    {
+      "number": 82,
+      "word": "Compliant",
+      "page": 5
+    },
+    {
+      "number": 83,
+      "word": "Complaisant",
+      "page": 5
+    },
+    {
+      "number": 84,
+      "word": "Conciliatory",
+      "page": 6
+    },
+    {
+      "number": 85,
+      "word": "Condone",
+      "page": 6
+    },
+    {
+      "number": 86,
+      "word": "Confound",
+      "page": 6
+    },
+    {
+      "number": 87,
+      "word": "Connoisseur",
+      "page": 6
+    },
+    {
+      "number": 88,
+      "word": "Contention",
+      "page": 6
+    },
+    {
+      "number": 89,
+      "word": "Contentious",
+      "page": 6
+    },
+    {
+      "number": 90,
+      "word": "Contrite",
+      "page": 6
+    },
+    {
+      "number": 91,
+      "word": "Conundrums",
+      "page": 6
+    },
+    {
+      "number": 92,
+      "word": "Converge",
+      "page": 6
+    },
+    {
+      "number": 93,
+      "word": "Convoluted",
+      "page": 6
+    },
+    {
+      "number": 94,
+      "word": "Craven",
+      "page": 6
+    },
+    {
+      "number": 95,
+      "word": "Daunt",
+      "page": 6
+    },
+    {
+      "number": 96,
+      "word": "Decorum",
+      "page": 6
+    },
+    {
+      "number": 97,
+      "word": "Default",
+      "page": 6
+    },
+    {
+      "number": 98,
+      "word": "Deference",
+      "page": 6
+    },
+    {
+      "number": 99,
+      "word": "Delineated",
+      "page": 6
+    },
+    {
+      "number": 100,
+      "word": "Denigrated",
+      "page": 7
+    },
+    {
+      "number": 101,
+      "word": "Deride",
+      "page": 7
+    },
+    {
+      "number": 102,
+      "word": "Derivative",
+      "page": 7
+    },
+    {
+      "number": 103,
+      "word": "Desiccate",
+      "page": 7
+    },
+    {
+      "number": 104,
+      "word": "Desultory",
+      "page": 7
+    },
+    {
+      "number": 105,
+      "word": "Deterrent",
+      "page": 7
+    },
+    {
+      "number": 106,
+      "word": "Diatribe",
+      "page": 7
+    },
+    {
+      "number": 107,
+      "word": "Dichotomy",
+      "page": 7
+    },
+    {
+      "number": 108,
+      "word": "Diffidence",
+      "page": 7
+    },
+    {
+      "number": 109,
+      "word": "Digress",
+      "page": 7
+    },
+    {
+      "number": 110,
+      "word": "Dirge",
+      "page": 7
+    },
+    {
+      "number": 111,
+      "word": "Disabuse",
+      "page": 7
+    },
+    {
+      "number": 112,
+      "word": "Discern",
+      "page": 7
+    },
+    {
+      "number": 113,
+      "word": "Discordant",
+      "page": 7
+    },
+    {
+      "number": 114,
+      "word": "Discredit",
+      "page": 7
+    },
+    {
+      "number": 115,
+      "word": "Discrepancy",
+      "page": 7
+    },
+    {
+      "number": 116,
+      "word": "Discrete",
+      "page": 8
+    },
+    {
+      "number": 117,
+      "word": "Disingenuous",
+      "page": 8
+    },
+    {
+      "number": 118,
+      "word": "Disinterested",
+      "page": 8
+    },
+    {
+      "number": 119,
+      "word": "Disjointed",
+      "page": 8
+    },
+    {
+      "number": 120,
+      "word": "Dismiss",
+      "page": 8
+    },
+    {
+      "number": 121,
+      "word": "Disparage",
+      "page": 8
+    },
+    {
+      "number": 122,
+      "word": "Disparate",
+      "page": 8
+    },
+    {
+      "number": 123,
+      "word": "Dissemble",
+      "page": 8
+    },
+    {
+      "number": 124,
+      "word": "Disseminate",
+      "page": 8
+    },
+    {
+      "number": 125,
+      "word": "Dissolution",
+      "page": 8
+    },
+    {
+      "number": 126,
+      "word": "Dissonance",
+      "page": 8
+    },
+    {
+      "number": 127,
+      "word": "Distend",
+      "page": 8
+    },
+    {
+      "number": 128,
+      "word": "Distill",
+      "page": 8
+    },
+    {
+      "number": 129,
+      "word": "Diverge",
+      "page": 8
+    },
+    {
+      "number": 130,
+      "word": "Divest",
+      "page": 8
+    },
+    {
+      "number": 131,
+      "word": "Dogmatic",
+      "page": 8
+    },
+    {
+      "number": 132,
+      "word": "Dormant",
+      "page": 9
+    },
+    {
+      "number": 133,
+      "word": "Dupe",
+      "page": 9
+    },
+    {
+      "number": 134,
+      "word": "Ceased",
+      "page": 9
+    },
+    {
+      "number": 135,
+      "word": "Ceaselessly",
+      "page": 9
+    },
+    {
+      "number": 136,
+      "word": "Coincidental",
+      "page": 9
+    },
+    {
+      "number": 137,
+      "word": "Collated",
+      "page": 9
+    },
+    {
+      "number": 138,
+      "word": "Collateral",
+      "page": 9
+    },
+    {
+      "number": 139,
+      "word": "Commencing",
+      "page": 9
+    },
+    {
+      "number": 140,
+      "word": "Compensate for",
+      "page": 9
+    },
+    {
+      "number": 141,
+      "word": "Comprise",
+      "page": 9
+    },
+    {
+      "number": 142,
+      "word": "Confront",
+      "page": 9
+    },
+    {
+      "number": 143,
+      "word": "Congestion",
+      "page": 9
+    },
+    {
+      "number": 144,
+      "word": "Conjecture",
+      "page": 9
+    },
+    {
+      "number": 145,
+      "word": "Conserving",
+      "page": 9
+    },
+    {
+      "number": 146,
+      "word": "Conspicuous",
+      "page": 9
+    },
+    {
+      "number": 147,
+      "word": "Constrain",
+      "page": 9
+    },
+    {
+      "number": 148,
+      "word": "Contemporary",
+      "page": 10
+    },
+    {
+      "number": 149,
+      "word": "Contend",
+      "page": 10
+    },
+    {
+      "number": 150,
+      "word": "Contention",
+      "page": 10
+    },
+    {
+      "number": 151,
+      "word": "Conversely",
+      "page": 10
+    },
+    {
+      "number": 152,
+      "word": "Conviction",
+      "page": 10
+    },
+    {
+      "number": 153,
+      "word": "Convinced",
+      "page": 10
+    },
+    {
+      "number": 154,
+      "word": "Cope with",
+      "page": 10
+    },
+    {
+      "number": 155,
+      "word": "Corporal punishment",
+      "page": 10
+    },
+    {
+      "number": 156,
+      "word": "Corresponded",
+      "page": 10
+    },
+    {
+      "number": 157,
+      "word": "Counterpart",
+      "page": 10
+    },
+    {
+      "number": 158,
+      "word": "Countryside",
+      "page": 10
+    },
+    {
+      "number": 159,
+      "word": "Culminating",
+      "page": 10
+    },
+    {
+      "number": 160,
+      "word": "Cumulative",
+      "page": 10
+    },
+    {
+      "number": 161,
+      "word": "Curtailed",
+      "page": 10
+    },
+    {
+      "number": 162,
+      "word": "Cutting edge",
+      "page": 10
+    },
+    {
+      "number": 163,
+      "word": "Damage",
+      "page": 10
+    },
+    {
+      "number": 164,
+      "word": "Decimated",
+      "page": 10
+    },
+    {
+      "number": 165,
+      "word": "Decline",
+      "page": 11
+    },
+    {
+      "number": 166,
+      "word": "Deduced",
+      "page": 11
+    },
+    {
+      "number": 167,
+      "word": "Delude",
+      "page": 11
+    },
+    {
+      "number": 168,
+      "word": "Demolished",
+      "page": 11
+    },
+    {
+      "number": 169,
+      "word": "Denigration",
+      "page": 11
+    },
+    {
+      "number": 170,
+      "word": "Density",
+      "page": 11
+    },
+    {
+      "number": 171,
+      "word": "Depleted",
+      "page": 11
+    },
+    {
+      "number": 172,
+      "word": "Deprived",
+      "page": 11
+    },
+    {
+      "number": 173,
+      "word": "Derelict",
+      "page": 11
+    },
+    {
+      "number": 174,
+      "word": "Derision",
+      "page": 11
+    },
+    {
+      "number": 175,
+      "word": "Descended",
+      "page": 11
+    },
+    {
+      "number": 176,
+      "word": "Desolate",
+      "page": 11
+    },
+    {
+      "number": 177,
+      "word": "Despoiled",
+      "page": 11
+    },
+    {
+      "number": 178,
+      "word": "Deteriorated",
+      "page": 11
+    },
+    {
+      "number": 179,
+      "word": "Deterred",
+      "page": 11
+    },
+    {
+      "number": 180,
+      "word": "Detrimental",
+      "page": 11
+    },
+    {
+      "number": 181,
+      "word": "Devastated",
+      "page": 11
+    },
+    {
+      "number": 182,
+      "word": "Deviation from",
+      "page": 12
+    },
+    {
+      "number": 183,
+      "word": "Devious",
+      "page": 12
+    },
+    {
+      "number": 184,
+      "word": "Devised",
+      "page": 12
+    },
+    {
+      "number": 185,
+      "word": "Devoted",
+      "page": 12
+    },
+    {
+      "number": 186,
+      "word": "Disastrous",
+      "page": 12
+    },
+    {
+      "number": 187,
+      "word": "Discarded",
+      "page": 12
+    },
+    {
+      "number": 188,
+      "word": "Discard",
+      "page": 12
+    },
+    {
+      "number": 189,
+      "word": "Disclose",
+      "page": 12
+    },
+    {
+      "number": 190,
+      "word": "Discrepancy",
+      "page": 12
+    },
+    {
+      "number": 191,
+      "word": "Dismantle",
+      "page": 12
+    },
+    {
+      "number": 192,
+      "word": "Dispute",
+      "page": 12
+    },
+    {
+      "number": 193,
+      "word": "Disruptive",
+      "page": 12
+    },
+    {
+      "number": 194,
+      "word": "Disseminate",
+      "page": 12
+    },
+    {
+      "number": 195,
+      "word": "Distinctive",
+      "page": 12
+    },
+    {
+      "number": 196,
+      "word": "Distinguished",
+      "page": 12
+    },
+    {
+      "number": 197,
+      "word": "Distraction",
+      "page": 12
+    },
+    {
+      "number": 198,
+      "word": "Divergent",
+      "page": 12
+    },
+    {
+      "number": 199,
+      "word": "Diverse",
+      "page": 13
+    },
+    {
+      "number": 200,
+      "word": "Dogged",
+      "page": 13
+    },
+    {
+      "number": 201,
+      "word": "Dominant",
+      "page": 13
+    },
+    {
+      "number": 202,
+      "word": "Drastically",
+      "page": 13
+    },
+    {
+      "number": 203,
+      "word": "Drought",
+      "page": 13
+    },
+    {
+      "number": 204,
+      "word": "Eliminated",
+      "page": 13
+    },
+    {
+      "number": 205,
+      "word": "Embark on",
+      "page": 13
+    },
+    {
+      "number": 206,
+      "word": "Embedded",
+      "page": 13
+    },
+    {
+      "number": 207,
+      "word": "Embellish",
+      "page": 13
+    },
+    {
+      "number": 208,
+      "word": "Emerge",
+      "page": 13
+    },
+    {
+      "number": 209,
+      "word": "Eminent",
+      "page": 13
+    },
+    {
+      "number": 210,
+      "word": "Emission",
+      "page": 13
+    },
+    {
+      "number": 211,
+      "word": "Emulate",
+      "page": 13
+    },
+    {
+      "number": 212,
+      "word": "Encompass",
+      "page": 13
+    },
+    {
+      "number": 213,
+      "word": "Encounter",
+      "page": 13
+    },
+    {
+      "number": 214,
+      "word": "Endangered",
+      "page": 14
+    },
+    {
+      "number": 215,
+      "word": "Endure",
+      "page": 14
+    },
+    {
+      "number": 216,
+      "word": "Enervation",
+      "page": 14
+    },
+    {
+      "number": 217,
+      "word": "Engender",
+      "page": 14
+    },
+    {
+      "number": 218,
+      "word": "Engrossing",
+      "page": 14
+    },
+    {
+      "number": 219,
+      "word": "Enigma",
+      "page": 14
+    },
+    {
+      "number": 220,
+      "word": "Entrenched",
+      "page": 14
+    },
+    {
+      "number": 221,
+      "word": "Entwined with",
+      "page": 14
+    },
+    {
+      "number": 222,
+      "word": "Equivalent",
+      "page": 14
+    },
+    {
+      "number": 223,
+      "word": "Eradication",
+      "page": 14
+    },
+    {
+      "number": 224,
+      "word": "Erosion",
+      "page": 14
+    },
+    {
+      "number": 225,
+      "word": "Escalating",
+      "page": 14
+    },
+    {
+      "number": 226,
+      "word": "Estrangement",
+      "page": 14
+    },
+    {
+      "number": 227,
+      "word": "Evaporate",
+      "page": 14
+    },
+    {
+      "number": 228,
+      "word": "Evoke",
+      "page": 14
+    },
+    {
+      "number": 229,
+      "word": "Evolved",
+      "page": 14
+    },
+    {
+      "number": 230,
+      "word": "Exacerbated",
+      "page": 14
+    },
+    {
+      "number": 231,
+      "word": "Exclusive",
+      "page": 15
+    },
+    {
+      "number": 232,
+      "word": "Exert",
+      "page": 15
+    },
+    {
+      "number": 233,
+      "word": "Expanded",
+      "page": 15
+    },
+    {
+      "number": 234,
+      "word": "Explicit",
+      "page": 15
+    },
+    {
+      "number": 235,
+      "word": "Exploited",
+      "page": 15
+    },
+    {
+      "number": 236,
+      "word": "Exquisitely",
+      "page": 15
+    },
+    {
+      "number": 237,
+      "word": "Extract",
+      "page": 15
+    },
+    {
+      "number": 238,
+      "word": "Daunt",
+      "page": 15
+    },
+    {
+      "number": 239,
+      "word": "Decorum",
+      "page": 15
+    },
+    {
+      "number": 240,
+      "word": "Default",
+      "page": 15
+    },
+    {
+      "number": 241,
+      "word": "Deference",
+      "page": 15
+    },
+    {
+      "number": 242,
+      "word": "Delineated",
+      "page": 15
+    },
+    {
+      "number": 243,
+      "word": "Deride",
+      "page": 15
+    },
+    {
+      "number": 244,
+      "word": "Derivative",
+      "page": 15
+    },
+    {
+      "number": 245,
+      "word": "Desiccate",
+      "page": 15
+    },
+    {
+      "number": 246,
+      "word": "Desultory",
+      "page": 15
+    },
+    {
+      "number": 247,
+      "word": "Deterrent",
+      "page": 16
+    },
+    {
+      "number": 248,
+      "word": "Diatribe",
+      "page": 16
+    },
+    {
+      "number": 249,
+      "word": "Dichotomy",
+      "page": 16
+    },
+    {
+      "number": 250,
+      "word": "Diffidence",
+      "page": 16
+    },
+    {
+      "number": 251,
+      "word": "Diffuse",
+      "page": 16
+    },
+    {
+      "number": 252,
+      "word": "Digress",
+      "page": 16
+    },
+    {
+      "number": 253,
+      "word": "Disabuse",
+      "page": 16
+    },
+    {
+      "number": 254,
+      "word": "Disingenuous",
+      "page": 16
+    },
+    {
+      "number": 255,
+      "word": "Disinterested",
+      "page": 16
+    },
+    {
+      "number": 256,
+      "word": "Disjointed",
+      "page": 16
+    },
+    {
+      "number": 257,
+      "word": "Dismiss",
+      "page": 16
+    },
+    {
+      "number": 258,
+      "word": "Disparage",
+      "page": 16
+    },
+    {
+      "number": 259,
+      "word": "Disparate",
+      "page": 16
+    },
+    {
+      "number": 260,
+      "word": "Dissemble",
+      "page": 16
+    },
+    {
+      "number": 261,
+      "word": "Disseminate",
+      "page": 16
+    },
+    {
+      "number": 262,
+      "word": "Dissolution",
+      "page": 16
+    },
+    {
+      "number": 263,
+      "word": "Dissonance",
+      "page": 17
+    },
+    {
+      "number": 264,
+      "word": "Diverge",
+      "page": 17
+    },
+    {
+      "number": 265,
+      "word": "Divest",
+      "page": 17
+    },
+    {
+      "number": 266,
+      "word": "Document",
+      "page": 17
+    },
+    {
+      "number": 267,
+      "word": "Dogmatic",
+      "page": 17
+    },
+    {
+      "number": 268,
+      "word": "Dormant",
+      "page": 17
+    },
+    {
+      "number": 269,
+      "word": "Dupe",
+      "page": 17
+    },
+    {
+      "number": 270,
+      "word": "Ebullient",
+      "page": 17
+    },
+    {
+      "number": 271,
+      "word": "Electric",
+      "page": 17
+    },
+    {
+      "number": 272,
+      "word": "Efficacy",
+      "page": 17
+    },
+    {
+      "number": 273,
+      "word": "Effrontery",
+      "page": 17
+    },
+    {
+      "number": 274,
+      "word": "Elegy",
+      "page": 17
+    },
+    {
+      "number": 275,
+      "word": "Elicit",
+      "page": 17
+    },
+    {
+      "number": 276,
+      "word": "Embellish",
+      "page": 17
+    },
+    {
+      "number": 277,
+      "word": "Empirical",
+      "page": 17
+    },
+    {
+      "number": 278,
+      "word": "Emulate",
+      "page": 17
+    },
+    {
+      "number": 279,
+      "word": "Endemic",
+      "page": 17
+    },
+    {
+      "number": 280,
+      "word": "Enervate",
+      "page": 18
+    },
+    {
+      "number": 281,
+      "word": "Engender",
+      "page": 18
+    },
+    {
+      "number": 282,
+      "word": "Enhance",
+      "page": 18
+    },
+    {
+      "number": 283,
+      "word": "Ephemeral",
+      "page": 18
+    },
+    {
+      "number": 284,
+      "word": "Equanimity",
+      "page": 18
+    },
+    {
+      "number": 285,
+      "word": "Equivocate",
+      "page": 18
+    },
+    {
+      "number": 286,
+      "word": "Erudite",
+      "page": 18
+    },
+    {
+      "number": 287,
+      "word": "Esoteric",
+      "page": 18
+    },
+    {
+      "number": 288,
+      "word": "Eulogy",
+      "page": 18
+    },
+    {
+      "number": 289,
+      "word": "Euphemism",
+      "page": 18
+    },
+    {
+      "number": 290,
+      "word": "Exacerbated",
+      "page": 18
+    },
+    {
+      "number": 291,
+      "word": "Exculpate",
+      "page": 18
+    },
+    {
+      "number": 292,
+      "word": "Exigency",
+      "page": 18
+    },
+    {
+      "number": 293,
+      "word": "Facetious",
+      "page": 18
+    },
+    {
+      "number": 294,
+      "word": "Facilitate",
+      "page": 18
+    },
+    {
+      "number": 295,
+      "word": "Fallacious",
+      "page": 18
+    },
+    {
+      "number": 296,
+      "word": "Fatuous",
+      "page": 19
+    },
+    {
+      "number": 297,
+      "word": "Fawning",
+      "page": 19
+    },
+    {
+      "number": 298,
+      "word": "Felicitous",
+      "page": 19
+    },
+    {
+      "number": 299,
+      "word": "Fervor",
+      "page": 19
+    },
+    {
+      "number": 300,
+      "word": "Flag",
+      "page": 19
+    },
+    {
+      "number": 301,
+      "word": "Fledgling",
+      "page": 19
+    },
+    {
+      "number": 302,
+      "word": "Flout",
+      "page": 19
+    },
+    {
+      "number": 303,
+      "word": "Foment",
+      "page": 19
+    },
+    {
+      "number": 304,
+      "word": "Forestall",
+      "page": 19
+    },
+    {
+      "number": 305,
+      "word": "Frugal",
+      "page": 19
+    },
+    {
+      "number": 306,
+      "word": "Futile",
+      "page": 19
+    },
+    {
+      "number": 307,
+      "word": "Faded",
+      "page": 19
+    },
+    {
+      "number": 308,
+      "word": "Facilitate",
+      "page": 20
+    },
+    {
+      "number": 309,
+      "word": "Feasible",
+      "page": 19
+    },
+    {
+      "number": 310,
+      "word": "Feeble",
+      "page": 19
+    },
+    {
+      "number": 311,
+      "word": "Fierce",
+      "page": 19
+    },
+    {
+      "number": 312,
+      "word": "Findings",
+      "page": 20
+    },
+    {
+      "number": 313,
+      "word": "Flourish",
+      "page": 20
+    },
+    {
+      "number": 314,
+      "word": "Formulated",
+      "page": 20
+    },
+    {
+      "number": 315,
+      "word": "Forthcoming",
+      "page": 20
+    },
+    {
+      "number": 316,
+      "word": "Fortuitous",
+      "page": 20
+    },
+    {
+      "number": 317,
+      "word": "Fragmentation",
+      "page": 20
+    },
+    {
+      "number": 318,
+      "word": "Fuelled",
+      "page": 20
+    },
+    {
+      "number": 319,
+      "word": "Gainsay",
+      "page": 20
+    },
+    {
+      "number": 320,
+      "word": "Garrulous",
+      "page": 20
+    },
+    {
+      "number": 321,
+      "word": "Goad",
+      "page": 20
+    },
+    {
+      "number": 322,
+      "word": "Gouge",
+      "page": 20
+    },
+    {
+      "number": 323,
+      "word": "Grandiloquent",
+      "page": 20
+    },
+    {
+      "number": 324,
+      "word": "Gregarious",
+      "page": 20
+    },
+    {
+      "number": 325,
+      "word": "Guileless",
+      "page": 20
+    },
+    {
+      "number": 326,
+      "word": "Gullible",
+      "page": 20
+    },
+    {
+      "number": 327,
+      "word": "Generate",
+      "page": 20
+    },
+    {
+      "number": 328,
+      "word": "Grasp",
+      "page": 21
+    },
+    {
+      "number": 329,
+      "word": "Habitats",
+      "page": 21
+    },
+    {
+      "number": 330,
+      "word": "Halting",
+      "page": 21
+    },
+    {
+      "number": 331,
+      "word": "Hardness",
+      "page": 21
+    },
+    {
+      "number": 332,
+      "word": "Havoc",
+      "page": 21
+    },
+    {
+      "number": 333,
+      "word": "Hindered",
+      "page": 21
+    },
+    {
+      "number": 334,
+      "word": "Harangue",
+      "page": 21
+    },
+    {
+      "number": 335,
+      "word": "Homogeneous",
+      "page": 21
+    },
+    {
+      "number": 336,
+      "word": "Iconoclast",
+      "page": 21
+    },
+    {
+      "number": 337,
+      "word": "Idolatry",
+      "page": 21
+    },
+    {
+      "number": 338,
+      "word": "Immutable",
+      "page": 21
+    },
+    {
+      "number": 339,
+      "word": "Impair",
+      "page": 21
+    },
+    {
+      "number": 340,
+      "word": "Impassive",
+      "page": 21
+    },
+    {
+      "number": 341,
+      "word": "Impede",
+      "page": 21
+    },
+    {
+      "number": 342,
+      "word": "Impermeable",
+      "page": 21
+    },
+    {
+      "number": 343,
+      "word": "Imperturbable",
+      "page": 21
+    },
+    {
+      "number": 344,
+      "word": "Impervious",
+      "page": 21
+    },
+    {
+      "number": 345,
+      "word": "Implacable",
+      "page": 22
+    },
+    {
+      "number": 346,
+      "word": "Implicit",
+      "page": 22
+    },
+    {
+      "number": 347,
+      "word": "Implode",
+      "page": 22
+    },
+    {
+      "number": 348,
+      "word": "Inadvertent",
+      "page": 23
+    },
+    {
+      "number": 349,
+      "word": "Inchoate",
+      "page": 22
+    },
+    {
+      "number": 350,
+      "word": "Incongruity",
+      "page": 22
+    },
+    {
+      "number": 351,
+      "word": "Inconsequential",
+      "page": 22
+    },
+    {
+      "number": 352,
+      "word": "Incorporated",
+      "page": 22
+    },
+    {
+      "number": 353,
+      "word": "Indeterminate",
+      "page": 22
+    },
+    {
+      "number": 354,
+      "word": "Indigence",
+      "page": 22
+    },
+    {
+      "number": 355,
+      "word": "Indolent",
+      "page": 22
+    },
+    {
+      "number": 356,
+      "word": "Inert",
+      "page": 22
+    },
+    {
+      "number": 357,
+      "word": "Ingenuous",
+      "page": 22
+    },
+    {
+      "number": 358,
+      "word": "Inherent",
+      "page": 22
+    },
+    {
+      "number": 359,
+      "word": "Innocuous",
+      "page": 22
+    },
+    {
+      "number": 360,
+      "word": "Insensible",
+      "page": 22
+    },
+    {
+      "number": 361,
+      "word": "Insinuate",
+      "page": 23
+    },
+    {
+      "number": 362,
+      "word": "Insipid",
+      "page": 23
+    },
+    {
+      "number": 363,
+      "word": "Insular",
+      "page": 23
+    },
+    {
+      "number": 364,
+      "word": "Intractable",
+      "page": 23
+    },
+    {
+      "number": 365,
+      "word": "Intransigent",
+      "page": 23
+    },
+    {
+      "number": 366,
+      "word": "Inundate",
+      "page": 23
+    },
+    {
+      "number": 367,
+      "word": "Inure",
+      "page": 23
+    },
+    {
+      "number": 368,
+      "word": "Invective",
+      "page": 23
+    },
+    {
+      "number": 369,
+      "word": "Irascible",
+      "page": 23
+    },
+    {
+      "number": 370,
+      "word": "Irresolute",
+      "page": 23
+    },
+    {
+      "number": 371,
+      "word": "Itinerary",
+      "page": 23
+    },
+    {
+      "number": 372,
+      "word": "Itinerant",
+      "page": 23
+    },
+    {
+      "number": 373,
+      "word": "Illuminated",
+      "page": 23
+    },
+    {
+      "number": 374,
+      "word": "Immersed",
+      "page": 23
+    },
+    {
+      "number": 375,
+      "word": "Impair",
+      "page": 23
+    },
+    {
+      "number": 376,
+      "word": "Impenetrable",
+      "page": 23
+    },
+    {
+      "number": 377,
+      "word": "Implemented",
+      "page": 24
+    },
+    {
+      "number": 378,
+      "word": "Implication",
+      "page": 24
+    },
+    {
+      "number": 379,
+      "word": "Inconceivable",
+      "page": 24
+    },
+    {
+      "number": 380,
+      "word": "Incongruous",
+      "page": 24
+    },
+    {
+      "number": 381,
+      "word": "Inconsistent",
+      "page": 24
+    },
+    {
+      "number": 382,
+      "word": "Indigenous",
+      "page": 24
+    },
+    {
+      "number": 383,
+      "word": "Indigenous",
+      "page": 24
+    },
+    {
+      "number": 384,
+      "word": "Indiscriminate",
+      "page": 24
+    },
+    {
+      "number": 385,
+      "word": "Indispensable",
+      "page": 24
+    },
+    {
+      "number": 386,
+      "word": "Inducing",
+      "page": 24
+    },
+    {
+      "number": 387,
+      "word": "Inevitable",
+      "page": 24
+    },
+    {
+      "number": 388,
+      "word": "Inextricably",
+      "page": 24
+    },
+    {
+      "number": 389,
+      "word": "Infallible",
+      "page": 24
+    },
+    {
+      "number": 390,
+      "word": "Ingenious",
+      "page": 24
+    },
+    {
+      "number": 391,
+      "word": "Ingenuity",
+      "page": 24
+    },
+    {
+      "number": 392,
+      "word": "Inhabitants",
+      "page": 24
+    },
+    {
+      "number": 393,
+      "word": "Inherently",
+      "page": 25
+    },
+    {
+      "number": 394,
+      "word": "Inhibit",
+      "page": 25
+    },
+    {
+      "number": 395,
+      "word": "Innate",
+      "page": 25
+    },
+    {
+      "number": 396,
+      "word": "Inoffensive",
+      "page": 25
+    },
+    {
+      "number": 397,
+      "word": "Insignificant",
+      "page": 25
+    },
+    {
+      "number": 398,
+      "word": "Integral",
+      "page": 25
+    },
+    {
+      "number": 399,
+      "word": "Integrated",
+      "page": 25
+    },
+    {
+      "number": 400,
+      "word": "Intensely",
+      "page": 25
+    },
+    {
+      "number": 401,
+      "word": "Intensive",
+      "page": 25
+    },
+    {
+      "number": 402,
+      "word": "Interaction",
+      "page": 25
+    },
+    {
+      "number": 403,
+      "word": "Interfere",
+      "page": 25
+    },
+    {
+      "number": 404,
+      "word": "Interminable",
+      "page": 25
+    },
+    {
+      "number": 405,
+      "word": "Interrupted",
+      "page": 25
+    },
+    {
+      "number": 406,
+      "word": "Intervention",
+      "page": 25
+    },
+    {
+      "number": 407,
+      "word": "Intrigue",
+      "page": 25
+    },
+    {
+      "number": 408,
+      "word": "Intrusion",
+      "page": 25
+    },
+    {
+      "number": 409,
+      "word": "Inundation",
+      "page": 25
+    },
+    {
+      "number": 410,
+      "word": "Invective",
+      "page": 26
+    },
+    {
+      "number": 411,
+      "word": "Inveigle",
+      "page": 26
+    },
+    {
+      "number": 412,
+      "word": "Isolated",
+      "page": 26
+    },
+    {
+      "number": 413,
+      "word": "Jeopardising",
+      "page": 26
+    },
+    {
+      "number": 414,
+      "word": "Labyrinth",
+      "page": 26
+    },
+    {
+      "number": 415,
+      "word": "Landmark",
+      "page": 26
+    },
+    {
+      "number": 416,
+      "word": "Legislation",
+      "page": 26
+    },
+    {
+      "number": 417,
+      "word": "Legitimate",
+      "page": 26
+    },
+    {
+      "number": 418,
+      "word": "Lessen",
+      "page": 26
+    },
+    {
+      "number": 419,
+      "word": "Lethargy",
+      "page": 26
+    },
+    {
+      "number": 420,
+      "word": "Livestock",
+      "page": 26
+    },
+    {
+      "number": 421,
+      "word": "Lumbering",
+      "page": 26
+    },
+    {
+      "number": 422,
+      "word": "Lassitude",
+      "page": 26
+    },
+    {
+      "number": 423,
+      "word": "Laconic",
+      "page": 26
+    },
+    {
+      "number": 424,
+      "word": "Latent",
+      "page": 26
+    },
+    {
+      "number": 425,
+      "word": "Laud",
+      "page": 26
+    },
+    {
+      "number": 426,
+      "word": "Lethargy",
+      "page": 27
+    },
+    {
+      "number": 427,
+      "word": "Levee",
+      "page": 27
+    },
+    {
+      "number": 428,
+      "word": "Levity",
+      "page": 27
+    },
+    {
+      "number": 429,
+      "word": "Log",
+      "page": 27
+    },
+    {
+      "number": 430,
+      "word": "Loquacious",
+      "page": 27
+    },
+    {
+      "number": 431,
+      "word": "Lucid",
+      "page": 27
+    },
+    {
+      "number": 432,
+      "word": "Luminous",
+      "page": 27
+    },
+    {
+      "number": 433,
+      "word": "Magnify",
+      "page": 27
+    },
+    {
+      "number": 434,
+      "word": "Magnitude",
+      "page": 27
+    },
+    {
+      "number": 435,
+      "word": "Mammoth",
+      "page": 27
+    },
+    {
+      "number": 436,
+      "word": "Mastered",
+      "page": 27
+    },
+    {
+      "number": 437,
+      "word": "Meager",
+      "page": 27
+    },
+    {
+      "number": 438,
+      "word": "Mediocre",
+      "page": 27
+    },
+    {
+      "number": 439,
+      "word": "Menace",
+      "page": 27
+    },
+    {
+      "number": 440,
+      "word": "Minuscule",
+      "page": 27
+    },
+    {
+      "number": 441,
+      "word": "Mitigate",
+      "page": 27
+    },
+    {
+      "number": 442,
+      "word": "Mobility",
+      "page": 27
+    },
+    {
+      "number": 443,
+      "word": "Modeled on",
+      "page": 28
+    },
+    {
+      "number": 444,
+      "word": "Mundane",
+      "page": 28
+    },
+    {
+      "number": 445,
+      "word": "Magnanimous",
+      "page": 28
+    },
+    {
+      "number": 446,
+      "word": "Malinger",
+      "page": 28
+    },
+    {
+      "number": 447,
+      "word": "Malleable",
+      "page": 28
+    },
+    {
+      "number": 448,
+      "word": "Maverick",
+      "page": 28
+    },
+    {
+      "number": 449,
+      "word": "Mendacious",
+      "page": 28
+    },
+    {
+      "number": 450,
+      "word": "Metamorphosis",
+      "page": 28
+    },
+    {
+      "number": 451,
+      "word": "Meticulous",
+      "page": 28
+    },
+    {
+      "number": 452,
+      "word": "Misanthrope",
+      "page": 28
+    },
+    {
+      "number": 453,
+      "word": "Mitigate",
+      "page": 28
+    },
+    {
+      "number": 454,
+      "word": "Mollify",
+      "page": 28
+    },
+    {
+      "number": 455,
+      "word": "Obsequious",
+      "page": 28
+    },
+    {
+      "number": 456,
+      "word": "Obviate",
+      "page": 28
+    },
+    {
+      "number": 457,
+      "word": "Occlude",
+      "page": 28
+    },
+    {
+      "number": 458,
+      "word": "Officious",
+      "page": 28
+    },
+    {
+      "number": 459,
+      "word": "Onerous",
+      "page": 29
+    },
+    {
+      "number": 460,
+      "word": "Opprobrium",
+      "page": 29
+    },
+    {
+      "number": 461,
+      "word": "Oscillate",
+      "page": 29
+    },
+    {
+      "number": 462,
+      "word": "Ostentatious",
+      "page": 29
+    },
+    {
+      "number": 463,
+      "word": "Necessitated",
+      "page": 29
+    },
+    {
+      "number": 464,
+      "word": "Negotiated",
+      "page": 29
+    },
+    {
+      "number": 465,
+      "word": "Nifty",
+      "page": 29
+    },
+    {
+      "number": 466,
+      "word": "Notoriety",
+      "page": 29
+    },
+    {
+      "number": 467,
+      "word": "Nurtured",
+      "page": 29
+    },
+    {
+      "number": 468,
+      "word": "Objectively",
+      "page": 29
+    },
+    {
+      "number": 469,
+      "word": "Obnoxious",
+      "page": 29
+    },
+    {
+      "number": 470,
+      "word": "Obscurity",
+      "page": 29
+    },
+    {
+      "number": 471,
+      "word": "Obstacle",
+      "page": 29
+    },
+    {
+      "number": 472,
+      "word": "Obstructed",
+      "page": 29
+    },
+    {
+      "number": 473,
+      "word": "Obtained",
+      "page": 29
+    },
+    {
+      "number": 474,
+      "word": "Ongoing",
+      "page": 29
+    },
+    {
+      "number": 475,
+      "word": "Opt out",
+      "page": 30
+    },
+    {
+      "number": 476,
+      "word": "Outbreak",
+      "page": 30
+    },
+    {
+      "number": 477,
+      "word": "Outcome",
+      "page": 30
+    },
+    {
+      "number": 478,
+      "word": "Outdated",
+      "page": 30
+    },
+    {
+      "number": 479,
+      "word": "Outlay",
+      "page": 30
+    },
+    {
+      "number": 480,
+      "word": "Outperformed",
+      "page": 30
+    },
+    {
+      "number": 481,
+      "word": "Outrageous",
+      "page": 30
+    },
+    {
+      "number": 482,
+      "word": "Outright",
+      "page": 30
+    },
+    {
+      "number": 483,
+      "word": "Outstrip",
+      "page": 30
+    },
+    {
+      "number": 484,
+      "word": "Overlay",
+      "page": 30
+    },
+    {
+      "number": 485,
+      "word": "Overlooked",
+      "page": 30
+    },
+    {
+      "number": 486,
+      "word": "Oversee",
+      "page": 30
+    },
+    {
+      "number": 487,
+      "word": "Overwhelmed",
+      "page": 30
+    },
+    {
+      "number": 488,
+      "word": "Paragon",
+      "page": 30
+    },
+    {
+      "number": 489,
+      "word": "Partisan",
+      "page": 30
+    },
+    {
+      "number": 490,
+      "word": "Pathological",
+      "page": 30
+    },
+    {
+      "number": 491,
+      "word": "Paucity",
+      "page": 31
+    },
+    {
+      "number": 492,
+      "word": "Pedantic",
+      "page": 31
+    },
+    {
+      "number": 493,
+      "word": "Penchant",
+      "page": 31
+    },
+    {
+      "number": 494,
+      "word": "Penury",
+      "page": 31
+    },
+    {
+      "number": 495,
+      "word": "Perennial",
+      "page": 31
+    },
+    {
+      "number": 496,
+      "word": "Perfidious",
+      "page": 31
+    },
+    {
+      "number": 497,
+      "word": "Perfunctory",
+      "page": 31
+    },
+    {
+      "number": 498,
+      "word": "Permeable",
+      "page": 31
+    },
+    {
+      "number": 499,
+      "word": "Pervasive",
+      "page": 31
+    },
+    {
+      "number": 500,
+      "word": "Phlegmatic",
+      "page": 31
+    },
+    {
+      "number": 501,
+      "word": "Piety",
+      "page": 31
+    },
+    {
+      "number": 502,
+      "word": "Porous",
+      "page": 31
+    },
+    {
+      "number": 503,
+      "word": "Pragmatic",
+      "page": 31
+    },
+    {
+      "number": 504,
+      "word": "Preamble",
+      "page": 31
+    },
+    {
+      "number": 505,
+      "word": "Precarious",
+      "page": 31
+    },
+    {
+      "number": 506,
+      "word": "Perennial",
+      "page": 31
+    },
+    {
+      "number": 507,
+      "word": "Perfidious",
+      "page": 31
+    },
+    {
+      "number": 508,
+      "word": "Perfunctory",
+      "page": 32
+    },
+    {
+      "number": 509,
+      "word": "Permeable",
+      "page": 32
+    },
+    {
+      "number": 510,
+      "word": "Pervasive",
+      "page": 32
+    },
+    {
+      "number": 511,
+      "word": "Phlegmatic",
+      "page": 32
+    },
+    {
+      "number": 512,
+      "word": "Piety",
+      "page": 32
+    },
+    {
+      "number": 513,
+      "word": "Porous",
+      "page": 32
+    },
+    {
+      "number": 514,
+      "word": "Pragmatic",
+      "page": 32
+    },
+    {
+      "number": 515,
+      "word": "Preamble",
+      "page": 32
+    },
+    {
+      "number": 516,
+      "word": "Precarious",
+      "page": 32
+    },
+    {
+      "number": 517,
+      "word": "Precipitate",
+      "page": 32
+    },
+    {
+      "number": 518,
+      "word": "Precursor",
+      "page": 32
+    },
+    {
+      "number": 519,
+      "word": "Presumptuous",
+      "page": 32
+    },
+    {
+      "number": 520,
+      "word": "Prevaricate",
+      "page": 32
+    },
+    {
+      "number": 521,
+      "word": "Pristine",
+      "page": 32
+    },
+    {
+      "number": 522,
+      "word": "Probity",
+      "page": 32
+    },
+    {
+      "number": 523,
+      "word": "Problematic",
+      "page": 32
+    },
+    {
+      "number": 524,
+      "word": "Prodigal",
+      "page": 32
+    },
+    {
+      "number": 525,
+      "word": "Profound",
+      "page": 32
+    },
+    {
+      "number": 526,
+      "word": "Prohibitive",
+      "page": 33
+    },
+    {
+      "number": 527,
+      "word": "Proliferate",
+      "page": 33
+    },
+    {
+      "number": 528,
+      "word": "Propensity",
+      "page": 33
+    },
+    {
+      "number": 529,
+      "word": "Propitiate",
+      "page": 33
+    },
+    {
+      "number": 530,
+      "word": "Propriety",
+      "page": 33
+    },
+    {
+      "number": 531,
+      "word": "Proscribe",
+      "page": 33
+    },
+    {
+      "number": 532,
+      "word": "Pungent",
+      "page": 33
+    },
+    {
+      "number": 533,
+      "word": "Painstaking",
+      "page": 33
+    },
+    {
+      "number": 534,
+      "word": "Paramount",
+      "page": 33
+    },
+    {
+      "number": 535,
+      "word": "Pass down",
+      "page": 33
+    },
+    {
+      "number": 536,
+      "word": "Paved",
+      "page": 33
+    },
+    {
+      "number": 537,
+      "word": "Perception",
+      "page": 33
+    },
+    {
+      "number": 538,
+      "word": "Perfect",
+      "page": 33
+    },
+    {
+      "number": 539,
+      "word": "Perils",
+      "page": 33
+    },
+    {
+      "number": 540,
+      "word": "Perished",
+      "page": 33
+    },
+    {
+      "number": 541,
+      "word": "Perpetuate",
+      "page": 33
+    },
+    {
+      "number": 542,
+      "word": "Persistent",
+      "page": 34
+    },
+    {
+      "number": 543,
+      "word": "Persuaded",
+      "page": 34
+    },
+    {
+      "number": 544,
+      "word": "Pervasive",
+      "page": 34
+    },
+    {
+      "number": 545,
+      "word": "Phenomenon",
+      "page": 34
+    },
+    {
+      "number": 546,
+      "word": "Pioneer",
+      "page": 34
+    },
+    {
+      "number": 547,
+      "word": "Plausible",
+      "page": 34
+    },
+    {
+      "number": 548,
+      "word": "Plunging",
+      "page": 34
+    },
+    {
+      "number": 549,
+      "word": "Pointless",
+      "page": 34
+    },
+    {
+      "number": 550,
+      "word": "Polemic",
+      "page": 34
+    },
+    {
+      "number": 551,
+      "word": "Potent",
+      "page": 34
+    },
+    {
+      "number": 552,
+      "word": "Precarious",
+      "page": 34
+    },
+    {
+      "number": 553,
+      "word": "Precautions",
+      "page": 34
+    },
+    {
+      "number": 554,
+      "word": "Precious",
+      "page": 34
+    },
+    {
+      "number": 555,
+      "word": "Precision",
+      "page": 34
+    },
+    {
+      "number": 556,
+      "word": "Prestigious",
+      "page": 34
+    },
+    {
+      "number": 557,
+      "word": "Presumably",
+      "page": 34
+    },
+    {
+      "number": 558,
+      "word": "Prevalence",
+      "page": 34
+    },
+    {
+      "number": 559,
+      "word": "Pristine",
+      "page": 34
+    },
+    {
+      "number": 560,
+      "word": "Privileged",
+      "page": 35
+    },
+    {
+      "number": 561,
+      "word": "Prodigious",
+      "page": 35
+    },
+    {
+      "number": 562,
+      "word": "Proliferate",
+      "page": 35
+    },
+    {
+      "number": 563,
+      "word": "Prolong",
+      "page": 35
+    },
+    {
+      "number": 564,
+      "word": "Prompted",
+      "page": 35
+    },
+    {
+      "number": 565,
+      "word": "Propagate",
+      "page": 35
+    },
+    {
+      "number": 566,
+      "word": "Proponent",
+      "page": 35
+    },
+    {
+      "number": 567,
+      "word": "Propound",
+      "page": 35
+    },
+    {
+      "number": 568,
+      "word": "Pursue",
+      "page": 35
+    },
+    {
+      "number": 569,
+      "word": "Radical",
+      "page": 35
+    },
+    {
+      "number": 570,
+      "word": "Ravage",
+      "page": 35
+    },
+    {
+      "number": 571,
+      "word": "Recalled",
+      "page": 35
+    },
+    {
+      "number": 572,
+      "word": "Recede",
+      "page": 35
+    },
+    {
+      "number": 573,
+      "word": "Reckless",
+      "page": 35
+    },
+    {
+      "number": 574,
+      "word": "Reenactment",
+      "page": 35
+    },
+    {
+      "number": 575,
+      "word": "Regardless",
+      "page": 35
+    },
+    {
+      "number": 576,
+      "word": "Regrettable",
+      "page": 36
+    },
+    {
+      "number": 577,
+      "word": "Regulate",
+      "page": 36
+    },
+    {
+      "number": 578,
+      "word": "Reinforce",
+      "page": 36
+    },
+    {
+      "number": 579,
+      "word": "Reiterated",
+      "page": 36
+    },
+    {
+      "number": 580,
+      "word": "Relatively",
+      "page": 36
+    },
+    {
+      "number": 581,
+      "word": "Relentless",
+      "page": 36
+    },
+    {
+      "number": 582,
+      "word": "Reliance on",
+      "page": 36
+    },
+    {
+      "number": 583,
+      "word": "Relics",
+      "page": 36
+    },
+    {
+      "number": 584,
+      "word": "Reluctant",
+      "page": 36
+    },
+    {
+      "number": 585,
+      "word": "Remote",
+      "page": 36
+    },
+    {
+      "number": 586,
+      "word": "Renewable",
+      "page": 36
+    },
+    {
+      "number": 587,
+      "word": "Repel",
+      "page": 36
+    },
+    {
+      "number": 588,
+      "word": "Replenish",
+      "page": 36
+    },
+    {
+      "number": 589,
+      "word": "Replicating",
+      "page": 36
+    },
+    {
+      "number": 590,
+      "word": "Repositories",
+      "page": 36
+    },
+    {
+      "number": 591,
+      "word": "Resembled",
+      "page": 36
+    },
+    {
+      "number": 592,
+      "word": "Resilience",
+      "page": 36
+    },
+    {
+      "number": 593,
+      "word": "Resistance",
+      "page": 37
+    },
+    {
+      "number": 594,
+      "word": "Resort to",
+      "page": 37
+    },
+    {
+      "number": 595,
+      "word": "Restriction",
+      "page": 37
+    },
+    {
+      "number": 596,
+      "word": "Revamped",
+      "page": 37
+    },
+    {
+      "number": 597,
+      "word": "Revealed",
+      "page": 37
+    },
+    {
+      "number": 598,
+      "word": "Reverted",
+      "page": 37
+    },
+    {
+      "number": 599,
+      "word": "Revitalize",
+      "page": 37
+    },
+    {
+      "number": 600,
+      "word": "Ridicule",
+      "page": 37
+    },
+    {
+      "number": 601,
+      "word": "Rigorous",
+      "page": 37
+    },
+    {
+      "number": 602,
+      "word": "Robust",
+      "page": 37
+    },
+    {
+      "number": 603,
+      "word": "Rooted in",
+      "page": 37
+    },
+    {
+      "number": 604,
+      "word": "Rudimentary",
+      "page": 37
+    },
+    {
+      "number": 605,
+      "word": "Ruled out",
+      "page": 37
+    },
+    {
+      "number": 606,
+      "word": "Run down",
+      "page": 37
+    },
+    {
+      "number": 607,
+      "word": "Qualified",
+      "page": 37
+    },
+    {
+      "number": 608,
+      "word": "Quibble",
+      "page": 37
+    },
+    {
+      "number": 609,
+      "word": "Quiescence",
+      "page": 38
+    },
+    {
+      "number": 610,
+      "word": "Rarefied",
+      "page": 38
+    },
+    {
+      "number": 611,
+      "word": "Recalcitrant",
+      "page": 38
+    },
+    {
+      "number": 612,
+      "word": "Recant",
+      "page": 38
+    },
+    {
+      "number": 613,
+      "word": "Reclusive",
+      "page": 38
+    },
+    {
+      "number": 614,
+      "word": "Recondite",
+      "page": 38
+    },
+    {
+      "number": 615,
+      "word": "Refractory",
+      "page": 38
+    },
+    {
+      "number": 616,
+      "word": "Refute",
+      "page": 38
+    },
+    {
+      "number": 617,
+      "word": "Relegate",
+      "page": 38
+    },
+    {
+      "number": 618,
+      "word": "Reproach",
+      "page": 38
+    },
+    {
+      "number": 619,
+      "word": "Reprobate",
+      "page": 38
+    },
+    {
+      "number": 620,
+      "word": "Repudiate",
+      "page": 38
+    },
+    {
+      "number": 621,
+      "word": "Rescind",
+      "page": 38
+    },
+    {
+      "number": 622,
+      "word": "Resolute",
+      "page": 38
+    },
+    {
+      "number": 623,
+      "word": "Resolve",
+      "page": 38
+    },
+    {
+      "number": 624,
+      "word": "Reticent",
+      "page": 38
+    },
+    {
+      "number": 625,
+      "word": "Reverent",
+      "page": 39
+    },
+    {
+      "number": 626,
+      "word": "Saturated",
+      "page": 39
+    },
+    {
+      "number": 627,
+      "word": "Scarce",
+      "page": 39
+    },
+    {
+      "number": 628,
+      "word": "Shrink",
+      "page": 39
+    },
+    {
+      "number": 629,
+      "word": "Simultaneous",
+      "page": 39
+    },
+    {
+      "number": 630,
+      "word": "Skeptical",
+      "page": 39
+    },
+    {
+      "number": 631,
+      "word": "Sleek",
+      "page": 39
+    },
+    {
+      "number": 632,
+      "word": "Soaring",
+      "page": 39
+    },
+    {
+      "number": 633,
+      "word": "Solidified",
+      "page": 39
+    },
+    {
+      "number": 634,
+      "word": "Sparing",
+      "page": 39
+    },
+    {
+      "number": 635,
+      "word": "Specification",
+      "page": 39
+    },
+    {
+      "number": 636,
+      "word": "Spectacular",
+      "page": 39
+    },
+    {
+      "number": 637,
+      "word": "Split",
+      "page": 39
+    },
+    {
+      "number": 638,
+      "word": "Squeezing",
+      "page": 39
+    },
+    {
+      "number": 639,
+      "word": "Staggering",
+      "page": 39
+    },
+    {
+      "number": 640,
+      "word": "Startling",
+      "page": 39
+    },
+    {
+      "number": 641,
+      "word": "Steeper",
+      "page": 40
+    },
+    {
+      "number": 642,
+      "word": "Steer",
+      "page": 40
+    },
+    {
+      "number": 643,
+      "word": "Stimulate",
+      "page": 40
+    },
+    {
+      "number": 644,
+      "word": "Stranded",
+      "page": 40
+    },
+    {
+      "number": 645,
+      "word": "Stubborn",
+      "page": 40
+    },
+    {
+      "number": 646,
+      "word": "Stunned",
+      "page": 40
+    },
+    {
+      "number": 647,
+      "word": "Subsidises",
+      "page": 40
+    },
+    {
+      "number": 648,
+      "word": "Subsistence",
+      "page": 40
+    },
+    {
+      "number": 649,
+      "word": "Substantial",
+      "page": 40
+    },
+    {
+      "number": 650,
+      "word": "Subtle",
+      "page": 40
+    },
+    {
+      "number": 651,
+      "word": "Successive",
+      "page": 40
+    },
+    {
+      "number": 652,
+      "word": "Succumbing",
+      "page": 40
+    },
+    {
+      "number": 653,
+      "word": "Supersede",
+      "page": 40
+    },
+    {
+      "number": 654,
+      "word": "Supplementary",
+      "page": 40
+    },
+    {
+      "number": 655,
+      "word": "Supplemented",
+      "page": 40
+    },
+    {
+      "number": 656,
+      "word": "Supposedly",
+      "page": 40
+    },
+    {
+      "number": 657,
+      "word": "Surpassing",
+      "page": 41
+    },
+    {
+      "number": 658,
+      "word": "Swamped",
+      "page": 41
+    },
+    {
+      "number": 659,
+      "word": "Sage",
+      "page": 41
+    },
+    {
+      "number": 660,
+      "word": "Salubrious",
+      "page": 41
+    },
+    {
+      "number": 661,
+      "word": "Sanction",
+      "page": 41
+    },
+    {
+      "number": 662,
+      "word": "Satiate",
+      "page": 41
+    },
+    {
+      "number": 663,
+      "word": "Saturate",
+      "page": 41
+    },
+    {
+      "number": 664,
+      "word": "Savory",
+      "page": 41
+    },
+    {
+      "number": 665,
+      "word": "Secrete",
+      "page": 41
+    },
+    {
+      "number": 666,
+      "word": "Shard",
+      "page": 41
+    },
+    {
+      "number": 667,
+      "word": "Skeptic",
+      "page": 41
+    },
+    {
+      "number": 668,
+      "word": "Solicitude",
+      "page": 41
+    },
+    {
+      "number": 669,
+      "word": "Soporific",
+      "page": 41
+    },
+    {
+      "number": 670,
+      "word": "Stigma",
+      "page": 41
+    },
+    {
+      "number": 671,
+      "word": "Stint",
+      "page": 41
+    },
+    {
+      "number": 672,
+      "word": "Stipulate",
+      "page": 42
+    },
+    {
+      "number": 673,
+      "word": "Stolid",
+      "page": 42
+    },
+    {
+      "number": 674,
+      "word": "Striated",
+      "page": 42
+    },
+    {
+      "number": 675,
+      "word": "Strut",
+      "page": 42
+    },
+    {
+      "number": 676,
+      "word": "Subpoena",
+      "page": 42
+    },
+    {
+      "number": 677,
+      "word": "Subside",
+      "page": 42
+    },
+    {
+      "number": 678,
+      "word": "Substantiate",
+      "page": 42
+    },
+    {
+      "number": 679,
+      "word": "Abate",
+      "page": 42
+    },
+    {
+      "number": 680,
+      "word": "Supersede",
+      "page": 42
+    },
+    {
+      "number": 681,
+      "word": "Supposition",
+      "page": 42
+    },
+    {
+      "number": 682,
+      "word": "Tacit",
+      "page": 42
+    },
+    {
+      "number": 683,
+      "word": "Tangential",
+      "page": 42
+    },
+    {
+      "number": 684,
+      "word": "Tenuous",
+      "page": 42
+    },
+    {
+      "number": 685,
+      "word": "Tirade",
+      "page": 42
+    },
+    {
+      "number": 686,
+      "word": "Torpor",
+      "page": 43
+    },
+    {
+      "number": 687,
+      "word": "Tortuous",
+      "page": 43
+    },
+    {
+      "number": 688,
+      "word": "Tractable",
+      "page": 43
+    },
+    {
+      "number": 689,
+      "word": "Transgress",
+      "page": 43
+    },
+    {
+      "number": 690,
+      "word": "Truculence",
+      "page": 43
+    },
+    {
+      "number": 691,
+      "word": "Tenuous",
+      "page": 43
+    },
+    {
+      "number": 692,
+      "word": "Thriving",
+      "page": 43
+    },
+    {
+      "number": 693,
+      "word": "Thwarted",
+      "page": 43
+    },
+    {
+      "number": 694,
+      "word": "Tranquility",
+      "page": 43
+    },
+    {
+      "number": 695,
+      "word": "Transcend",
+      "page": 43
+    },
+    {
+      "number": 696,
+      "word": "Transient",
+      "page": 43
+    },
+    {
+      "number": 697,
+      "word": "Tremendous",
+      "page": 43
+    },
+    {
+      "number": 698,
+      "word": "Triumph",
+      "page": 43
+    },
+    {
+      "number": 699,
+      "word": "Triumphant",
+      "page": 43
+    },
+    {
+      "number": 700,
+      "word": "Troublesome",
+      "page": 43
+    },
+    {
+      "number": 701,
+      "word": "Unblemished",
+      "page": 43
+    },
+    {
+      "number": 702,
+      "word": "Uncanny",
+      "page": 44
+    },
+    {
+      "number": 703,
+      "word": "Undercutting",
+      "page": 44
+    },
+    {
+      "number": 704,
+      "word": "Undergoing",
+      "page": 44
+    },
+    {
+      "number": 705,
+      "word": "Underlying",
+      "page": 44
+    },
+    {
+      "number": 706,
+      "word": "Underpin",
+      "page": 44
+    },
+    {
+      "number": 707,
+      "word": "Vulnerability",
+      "page": 44
+    },
+    {
+      "number": 708,
+      "word": "Waning",
+      "page": 44
+    },
+    {
+      "number": 709,
+      "word": "Wary",
+      "page": 44
+    },
+    {
+      "number": 710,
+      "word": "Admiration",
+      "page": 44
+    },
+    {
+      "number": 711,
+      "word": "Waxing",
+      "page": 44
+    },
+    {
+      "number": 712,
+      "word": "Willingness",
+      "page": 44
+    },
+    {
+      "number": 713,
+      "word": "Winkle out",
+      "page": 44
+    },
+    {
+      "number": 714,
+      "word": "Withstand",
+      "page": 44
+    },
+    {
+      "number": 715,
+      "word": "Wreck",
+      "page": 44
+    },
+    {
+      "number": 716,
+      "word": "Vacillate",
+      "page": 44
+    },
+    {
+      "number": 717,
+      "word": "Venerate",
+      "page": 44
+    },
+    {
+      "number": 718,
+      "word": "Veracious",
+      "page": 45
+    },
+    {
+      "number": 719,
+      "word": "Verbose",
+      "page": 45
+    },
+    {
+      "number": 720,
+      "word": "Viable",
+      "page": 45
+    },
+    {
+      "number": 721,
+      "word": "Vituperative",
+      "page": 45
+    },
+    {
+      "number": 722,
+      "word": "Volatile",
+      "page": 45
+    }
+  ]
+}
