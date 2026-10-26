@@ -14,7 +14,7 @@ const questionTypes=[
 ];
 const empty=()=>({id:'',wordId:'',prompt:'',type:'ADMIN_CONTEXT_MCQ',options:['','','',''],answer:'',band:'',hint:'',explanation:'',required:false});
 export default function QuestionEditor({words}:{words:Word[]}){
- const [week,setWeek]=useState(1),[list,setList]=useState<any[]>([]),[edit,setEdit]=useState<any>(empty()),[search,setSearch]=useState(''),[status,setStatus]=useState(''),[loading,setLoading]=useState(false);
+ const [kind,setKind]=useState('Weekly'),[week,setWeek]=useState(1),[list,setList]=useState<any[]>([]),[edit,setEdit]=useState<any>(empty()),[search,setSearch]=useState(''),[status,setStatus]=useState(''),[loading,setLoading]=useState(false);
  const filtered=useMemo(()=>words.filter(w=>(w.word+' '+w.bengali_meaning).toLowerCase().includes(search.toLowerCase())).slice(0,50),[words,search]);
  const typed=['FILL_BLANK','SHORT_ANSWER','WORD_MEANING'].includes(edit.type);
  const multi=edit.type==='MULTI_SELECT';
@@ -24,7 +24,7 @@ export default function QuestionEditor({words}:{words:Word[]}){
   setLoading(true);setStatus('Saving…');
   try{
    const question={...edit,wordId:edit.wordId||wordKey(words[0]),options:trueFalse?['True','False']:typed?[]:edit.options.filter((x:string)=>x.trim()),answer:edit.answer};
-   const r=await fetch('/api/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,week,question,...extra})});
+   const r=await fetch('/api/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,week,kind,question,...extra})});
    const d=await r.json();if(!r.ok)throw Error(d.error);
    setList(d.questions||[]);setStatus('Saved');
    if(action==='saveQuestion')setEdit(empty());
@@ -42,10 +42,10 @@ export default function QuestionEditor({words}:{words:Word[]}){
   <h2>Mock question bank · all question types</h2>
   <p>Publish questions, edit answers, choose mandatory or optional questions and set vocabulary-specific band labels. Admin questions replace generated questions in new attempts.</p>
   <div className="admin-edit-grid">
-   <label>Week<input min={1} max={26} type="number" value={week} onChange={e=>setWeek(Math.max(1,Math.min(26,Number(e.target.value)||1)))}/></label>
+   <label>Assessment<select value={kind} onChange={e=>setKind(e.target.value)}><option>Weekly</option><option>Revision</option></select></label><label>Week<input min={1} max={26} type="number" value={week} onChange={e=>setWeek(Math.max(1,Math.min(26,Number(e.target.value)||1)))}/></label>
    <label>Question type<select value={edit.type} onChange={e=>changeType(e.target.value)}>{questionTypes.map(([v,t])=><option value={v} key={v}>{t}</option>)}</select></label>
   </div>
-  <button className="outline" disabled={loading} onClick={()=>void call('listQuestions')}>Load saved questions for Week {week}</button>
+  <button className="outline" disabled={loading} onClick={()=>void call('listQuestions')}>Load saved {kind.toLowerCase()} questions for Week {week}</button>
   <label>Find linked vocabulary<input value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search English or Bengali word"/></label>
   <label>Linked word<select value={edit.wordId} onChange={e=>setEdit({...edit,wordId:e.target.value})}>
    <option value="">Select a word</option>{filtered.map(w=><option value={wordKey(w)} key={wordKey(w)}>{w.label||w.word} · {w.bengali_meaning}</option>)}
@@ -72,7 +72,7 @@ export default function QuestionEditor({words}:{words:Word[]}){
    <button className="outline" onClick={()=>setEdit(empty())}>Clear editor</button>
   </div>
   <p role="status">{status}</p>
-  <h3>Saved questions: {list.length}</h3>
+  <h3>Saved {kind.toLowerCase()} questions: {list.length}</h3>
   {list.map((q:any,i:number)=><article className="notice" key={q.id}>
    <strong>{i+1}. {q.prompt}</strong><p>{questionTypes.find(x=>x[0]===q.type)?.[1]||'MCQ'} · {q.required?'Required':'Optional'} · {q.band||'Inherited band'}</p>
    <p>{(q.options||[]).join(' · ')}</p><p>Correct answer: {String(q.answer||'').replaceAll('\u001F',', ')}</p>

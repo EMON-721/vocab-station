@@ -15,7 +15,7 @@ export async function POST(req:Request){
   if(['start','practice','startRevision','practiceRevision'].includes(d.action)){
    const week=Number(d.week),revision=d.action.endsWith('Revision'),practice=d.action.startsWith('practice');
    const words=await vocabulary(u.userId),track=state.track||120;
-   const config=await readRecord('test-config',{});if(config[week]?.enabled===false)throw Error('This assessment has been disabled by the administrator.');
+   const config=await readRecord('test-config',{});const options=config[String(week)+(revision?':Revision':'')]||{};if(options.enabled===false)throw Error('This assessment has been disabled by the administrator.');
    const assigned=Number(state.assignedTest?.week)===week&&state.assignedTest?.kind===(revision?'Revision':'Weekly');
    if(!Number.isInteger(week)||week<1||week>Math.ceil(track/7))throw Error('Choose a valid assessment week.');
    if(revision){if(week%2!==0)throw Error('Revision checkpoints cover a pair of weeks.');if(!assigned&&(!passedAssessment(state.attempts,'Weekly',week-1)||!passedAssessment(state.attempts,'Weekly',week)))throw Error('Pass both weekly tests at 90% before their revision checkpoint.');}
@@ -23,7 +23,6 @@ export async function POST(req:Request){
    const pool=revision?[...wordsForWeek(words,track,week-1,state),...wordsForWeek(words,track,week,state)]:wordsForWeek(words,track,week,state);
    if(!pool.length)throw Error('No vocabulary is assigned to this assessment.');
    if(!practice&&!revision&&!assigned&&!weekReady(words,state,week))throw Error('Complete every day’s words, recall practice and sentence task in this week before taking the weekly test.');
-   const options=config[week]||{};
    const count=Math.max(5,Math.min(60,Number(options.questionCount)||30));
    const duration=Math.max(60,Math.min(7200,Number(options.timeSeconds)||TEST_SECONDS));
    const passPercent=Math.max(1,Math.min(100,Number(options.passPercent)||PASS_PERCENT));
@@ -32,7 +31,7 @@ export async function POST(req:Request){
     ...makeQuestions(wordsForWeek(words,track,week,state),count-Math.floor(count/2),1)]
     :makeQuestions(pool,count);
    if(objective.length!==count)throw Error('This assessment needs '+count+' distinct objective questions in the selected vocabulary. Reduce the question count or add more vocabulary.');
-   const custom=revision?[]:await readRecord('custom-questions:'+week,[]);
+   const custom=await readRecord('custom-questions:'+week+(revision?':Revision':''),[]);
    const authored=custom.flatMap((item:any)=>{
     const w=pool.find(x=>wordKey(x)===item.wordId);
     if(!w)return [];
@@ -45,7 +44,7 @@ export async function POST(req:Request){
       multi,explanation:item.explanation}];
    });
    const selected=authored.length?[...authored.slice(0,count),...objective.filter((q:any)=>!authored.some((x:any)=>x.prompt===q.prompt)).slice(0,count-authored.length)]:objective;
-   const q=[...selected,...sentenceQuestions(pool).slice(0,writingCount)],id=crypto.randomUUID(),kind=practice?'Practice':revision?'Revision':'Weekly';
+   const q=[...selected.map((question:any)=>({...question,required:options.requireAll===true||question.required===true})),...sentenceQuestions(pool).slice(0,writingCount).map(q=>({...q,required:options.requireAll===true}))],id=crypto.randomUUID(),kind=practice?'Practice':revision?'Revision':'Weekly';
    await writeRecord('exam:'+u.userId+':'+id,{q,week,kind,revision,started:Date.now(),timeSeconds:duration,passPercent,showAnswers:options.showAnswers!==false,title:options.title||`Week ${week} test`,used:false});await writeRecord(u.userId,{...state,assessmentSessions:[...(state.assessmentSessions||[]),{id,week,kind,date:new Date().toISOString()}].slice(-30)});
    return Response.json({id,kind,revision,title:options.title||`Week ${week} test`,seconds:duration,passPercent,writingCount,scoredQuestions:count,questions:q.map(({w,answer,accepted,explanation,...safe})=>safe)});
   }
