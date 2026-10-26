@@ -35,7 +35,9 @@ export async function GET(request: Request): Promise<Response> {
   let returnTo = "/";
   try {
     const binary = atob(parts[2].replace(/-/g, "+").replace(/_/g, "/"));
-    returnTo = safeReturnPath(new TextDecoder().decode(Uint8Array.from(binary, c => c.charCodeAt(0))));
+    const bytes = new Uint8Array(binary.length);
+    for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+    returnTo = safeReturnPath(new TextDecoder().decode(bytes));
   } catch { return fail(); }
 
   try {
