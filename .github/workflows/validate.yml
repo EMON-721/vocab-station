@@ -1,0 +1,31 @@
+name: Vocab Station checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Enable exact package manager
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.25.0 --activate
+      - name: Install pinned dependencies
+        run: pnpm install --frozen-lockfile
+      - name: TypeScript typecheck
+        run: ./node_modules/.bin/tsc --noEmit
+      - name: Vocabulary checks
+        run: |
+          node scripts/check-vocabulary.mjs
+          node scripts/check-assessment-v3.mjs
+          node scripts/check-access.mjs
+      - name: Production build
+        run: pnpm build
