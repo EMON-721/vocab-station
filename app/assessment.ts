@@ -10,6 +10,12 @@ export function makeQuestions(pool:Word[],count=30,recallLimit=2){const q:any[]=
  // A short final study week still needs 30 questions: use a second, distinct vocabulary dimension.
  for(const w of shuffle(pool)){if(q.length>=count)break;const answer=w.part_of_speech;const labels=['noun','verb','adjective','adverb','preposition','determiner','pronoun','number'];const options=shuffle([answer,...shuffle(labels.filter(x=>x!==answer)).slice(0,3)]);q.push({w,typed:false,type:'WORD_CLASS',band:difficulty(w),prompt:`Which complete parts-of-speech label is recorded for “${w.label||w.word}” in this week's vocabulary?`,answer,accepted:[answer],options,explanation:`The entry records: ${answer}.`});}
  let gaps=0;const mixed=q.slice(0,count);let tf=0;for(let i=mixed.length-1;i>=0&&tf<Math.max(1,Math.floor(count/15));i--){const item=mixed[i];if(item.typed||item.type==='CLOZE_MCQ')continue;const truth=tf%2===0;const alternative=pool.find(w=>w.bengali_meaning!==item.w.bengali_meaning);if(!truth&&!alternative)continue;const meaning=truth?item.w.bengali_meaning:alternative!.bengali_meaning;mixed[i]={...item,type:'TRUE_FALSE',prompt:`True or false: the recorded Bengali meaning of “${item.w.label||item.w.word}” in this entry is “${meaning}”.`,answer:truth?'True':'False',accepted:[truth?'True':'False'],options:['True','False'],explanation:`The recorded meaning is “${item.w.bengali_meaning}”.`};tf++;}return shuffle(mixed.map(item=>item.type==='CLOZE_MCQ'&&gaps++<Math.max(1,Math.floor(count/15))?{...item,typed:true,type:'CLOZE_TYPED',options:[],hint:'Type the vocabulary word that completes this sentence.'}:item));}
-export function correctAnswer(q:any,value:string){return(q.accepted||[q.answer]).some((a:string)=>a.trim().toLowerCase()===(value||'').trim().toLowerCase());}
+export function correctAnswer(q:any,value:string){
+ if(q.multi||q.type==='MULTI_SELECT'){
+  const normalise=(s:string)=>s.split('\u001F').map(x=>x.trim().toLowerCase()).filter(Boolean).sort().join('\u001F');
+  return normalise(value||'')===normalise(String(q.answer||''));
+ }
+ return(q.accepted||[q.answer]).some((a:string)=>a.trim().toLowerCase()===(value||'').trim().toLowerCase());
+}
 
 export function sentenceQuestions(pool:Word[]){return shuffle(pool.filter(w=>w.simple_example)).concat(pool.filter(w=>!w.simple_example)).slice(0,2).map(w=>({w,writing:true,typed:true,type:'OWN_SENTENCE',band:difficulty(w),target:w.word,prompt:`Write an original English sentence using “${w.word}”.`,hint:'Writing feedback only: this response does not change your objective test score.',answer:w.simple_example,accepted:[],options:[],explanation:'An original sentence has many possible correct answers. Automated basic checks are not a full grammar assessment.'}));}
