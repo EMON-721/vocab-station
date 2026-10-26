@@ -27,7 +27,7 @@ export async function POST(req:Request){
    const count=Math.max(5,Math.min(60,Number(options.questionCount)||30));
    const duration=Math.max(60,Math.min(7200,Number(options.timeSeconds)||TEST_SECONDS));
    const passPercent=Math.max(1,Math.min(100,Number(options.passPercent)||PASS_PERCENT));
-   const writingCount=Math.max(0,Math.min(2,Number(options.writingCount)??2));
+   const writingCount=Math.max(0,Math.min(2,Number.isInteger(Number(options.writingCount))?Number(options.writingCount):2));
    const objective=revision?[...makeQuestions(wordsForWeek(words,track,week-1,state),Math.floor(count/2),1),
     ...makeQuestions(wordsForWeek(words,track,week,state),count-Math.floor(count/2),1)]
     :makeQuestions(pool,count);
