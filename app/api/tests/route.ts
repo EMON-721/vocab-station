@@ -78,7 +78,7 @@ export async function GET(req:Request){const u=await auth();if(!u)return Respons
 function hideAnswers(result:any){
  const safe={...result};
  safe.details=(result.details||[]).map((q:any)=>{
-  const {answer,accepted,explanation,reference,spellingSuggestion,feedback,...publicDetails}=q;
+  const {w,answer,accepted,explanation,reference,spellingSuggestion,feedback,...publicDetails}=q;
   return {...publicDetails,feedback:'Answer key hidden by your administrator.'};
  });
  safe.writingNotice='Your submission is saved. Correct answers are hidden by the administrator.';
