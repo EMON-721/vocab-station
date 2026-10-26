@@ -1,6 +1,7 @@
 import { getSignedInUser, googleSignInPath } from "../google-auth";
 import { redirect } from "next/navigation";
 import { ShieldCheck, ArrowRight } from "lucide-react";
+import { readRecord } from '../data-server';
 
 export const dynamic = "force-dynamic";
 
@@ -11,12 +12,13 @@ export default async function Login({
 }) {
   if (await getSignedInUser()) redirect("/");
   const error = (await searchParams)?.auth_error;
+  const site = await readRecord('site-settings-v1',{}).catch(()=>({}));
   const message = error === "not_configured"
     ? "Google sign-in is being configured by the administrator."
     : error ? "Google sign-in could not be completed. Please try again." : null;
   return (
     <main className="login-page">
-      <a href="/" className="brand"><img className="brand-mark" src="/logo.svg" alt="VS monogram" />Vocab Station</a>
+      <a href="/" className="brand"><img className="brand-mark" src={site.logoUrl||"/logo.svg"} alt="Site logo" />{site.siteTitle||"Vocab Station"}</a>
       <div className="login-intro">
         <span className="eyebrow">YOUR PERSONAL VOCABULARY WORKSPACE</span>
         <h1>Welcome to<br />your next chapter.</h1>
