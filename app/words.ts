@@ -6,7 +6,7 @@ import {bonusWords} from './bonus-words';
 import {academicWords} from './academic-words';
 import {newWords} from './new-words';
 import {expandedWords} from './expanded-words';
-export type Word={id?:string;label?:string;source_details?:string;accepted?:string[];bengali_example?:string;source?:string;example_source?:string;word:string;part_of_speech:string;english_meaning:string;bengali_meaning:string;simple_example:string;phonetic_transcription?:string};
+export type Word={id?:string;label?:string;source_details?:string;accepted?:string[];bengali_example?:string;source?:string;example_source?:string;word:string;part_of_speech:string;english_meaning:string;bengali_meaning:string;simple_example:string;phonetic_transcription?:string;practice_examples?:{english:string;bengali:string}[];usage_note?:string;article?:string;countability?:string;band_label?:string};
 const rows=[
 ['abundant','adjective','Existing in large quantities','প্রচুর','The region has abundant natural resources.','/əˈbʌndənt/'],
 ['adapt','verb','To change to suit new conditions','মানিয়ে নেওয়া','Students must adapt to a new learning environment.','/əˈdæpt/'],
