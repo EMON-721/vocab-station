@@ -15,5 +15,5 @@ export const variations:Record<string,{english:string;bengali:string}[]>={
 'ho-2':[{english:'She is able to solve the problem without any help.',bengali:'সে কোনো সাহায্য ছাড়াই সমস্যাটি সমাধান করতে সক্ষম।'},{english:'With better transport, more people will be able to reach the hospital.',bengali:'উন্নত পরিবহনের মাধ্যমে আরও মানুষ হাসপাতালে পৌঁছাতে সক্ষম হবে।'}],
 'ho-3':[{english:'The students talked about ways to save water.',bengali:'শিক্ষার্থীরা পানি বাঁচানোর উপায় সম্পর্কে কথা বলেছে।'},{english:'This book teaches us about the natural world.',bengali:'এই বই আমাদের প্রাকৃতিক জগৎ সম্পর্কে শেখায়।'}]
 };
-export function examplesFor(w:Word){return[...(w.simple_example?[{english:w.simple_example,bengali:w.bengali_example||''}]:[]),...(w.practice_examples||[]),...(variations[wordKey(w)]||[])];}
+export function examplesFor(w:Word){return[...(w.simple_example?[{english:w.simple_example,bengali:w.bengali_example||'',audioUrl:w.sentence_audio_url||''}]:[]),...(w.practice_examples||[]),...(variations[wordKey(w)]||[])];}
 export function typingSentences(words:Word[]){const seen=new Set<string>();return words.flatMap(w=>examplesFor(w).map(e=>({...e,word:w.word,id:wordKey(w)}))).filter(e=>{if(seen.has(e.english))return false;seen.add(e.english);return true}).slice(0,300);}

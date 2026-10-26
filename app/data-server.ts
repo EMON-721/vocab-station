@@ -16,13 +16,14 @@ export function cleanWord(data:any):Word {
   ? data.practice_examples.slice(0,25).map((e:any)=>({english:short(e?.english),bengali:short(e?.bengali)})).filter((e:any)=>e.english)
   : [];
  const accepted=Array.isArray(data.accepted)?data.accepted.slice(0,20).map((a:unknown)=>short(a,120)).filter(Boolean):[];
+ const safeAudio=(v:unknown)=>{const value=short(v,500);if(value&&!/^https:\/\/[^\s]+$/i.test(value))throw Error('Audio links must use HTTPS.');return value;};
  const w:Word={
   id:crypto.randomUUID(),word:short(data.word,80),label:short(data.label,100)||short(data.word,80),
   part_of_speech:short(data.part_of_speech,180),
   english_meaning:short(data.english_meaning),bengali_meaning:short(data.bengali_meaning),
   simple_example:short(data.simple_example),bengali_example:short(data.bengali_example),
   phonetic_transcription:short(data.phonetic_transcription,160),source_details:short(data.source_details,220),
-  band_label:short(data.band_label,130),article:short(data.article,160),
+  band_label:short(data.band_label,130),audio_url:safeAudio(data.audio_url),sentence_audio_url:safeAudio(data.sentence_audio_url),article:short(data.article,160),
   countability:short(data.countability,160),usage_note:short(data.usage_note),
   practice_examples:examples,accepted,source:'Personal vocabulary',example_source:'Learner contribution'
  };
