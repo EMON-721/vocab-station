@@ -53,7 +53,7 @@ export default function AdminManagement({users,words,onRefresh,onSettings}:{
   if(busy)return;setBusy(true);setStatus('Saving…');
   try{
    const r=await fetch('/api/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({userId:selected,...payload})});
-   const d=await r.json();
+   const d:any=await r.json();
    if(!r.ok)throw Error(d.error||'Save failed');
    setStatus('Saved successfully');
    if(payload.action==='siteSettings'){const values={...site,...(d.settings||{})};setSite(values);onSettings(values);}

@@ -25,7 +25,7 @@ export default function QuestionEditor({words}:{words:Word[]}){
   try{
    const question={...edit,wordId:edit.wordId||wordKey(words[0]),options:trueFalse?['True','False']:typed?[]:edit.options.filter((x:string)=>x.trim()),answer:edit.answer};
    const r=await fetch('/api/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action,week,kind,question,...extra})});
-   const d=await r.json();if(!r.ok)throw Error(d.error);
+   const d:any=await r.json();if(!r.ok)throw Error(d.error);
    setList(d.questions||[]);setStatus('Saved');
    if(action==='saveQuestion')setEdit(empty());
   }catch(e:any){setStatus(e.message||'Could not save question');}finally{setLoading(false);}
