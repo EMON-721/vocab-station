@@ -18,7 +18,7 @@ const defaultSite = {
  footer:'Your learning workspace',
  progressTitle:'Your learning progress', dailyTitle:'Your daily vocabulary',
  practiceTitle:'Practise this vocabulary',mockTitle:'Weekly mocks & revision',
- learningNotice:'Read and mark every word, complete recall and sentence practice.'
+ learningNotice:'Read and mark every word, complete recall and sentence practice.',labels:{}
 };
 
 export default function AdminManagement({users,words,onRefresh,onSettings}:{
@@ -31,7 +31,7 @@ export default function AdminManagement({users,words,onRefresh,onSettings}:{
  const [status,setStatus]=useState('');
  const [busy,setBusy]=useState(false);
  const [day,setDay]=useState(1),[mode,setMode]=useState('allow');
- const [assignDay,setAssignDay]=useState(1),[query,setQuery]=useState(''),[wordId,setWordId]=useState('');
+ const [extraEnglish,setExtraEnglish]=useState(''),[extraBengali,setExtraBengali]=useState(''),[assignDay,setAssignDay]=useState(1),[query,setQuery]=useState(''),[wordId,setWordId]=useState('');
  const [week,setWeek]=useState(1),[assessmentKind,setAssessmentKind]=useState('Weekly');
  const [test,setTest]=useState<any>({enabled:true,questionCount:30,timeSeconds:900,passPercent:90,writingCount:2,requireAll:false,showAnswers:true,title:'Week 1 test'});
  const learner=users.find(u=>u.id===selected);
@@ -87,6 +87,39 @@ export default function AdminManagement({users,words,onRefresh,onSettings}:{
    </div>
    <label>About Vocab Station<textarea rows={4} value={site.about||''} onChange={e=>setSite({...site,about:e.target.value})}/></label>
    <label>Learning-day checklist instructions<textarea rows={3} value={site.learningNotice||''} onChange={e=>setSite({...site,learningNotice:e.target.value})}/></label>
+   <details className="admin-copy-edit"><summary>Edit learning, practice and assessment button labels</summary><p>Leave a field blank to use the default. These labels are updated for every learner.</p>
+  <div className="admin-edit-grid">
+  <label>I know this<input maxLength={180} value={site.labels?.know||''} placeholder="I know this" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),know:e.target.value}}))}/></label>
+<label>Needs review<input maxLength={180} value={site.labels?.review||''} placeholder="Needs review" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),review:e.target.value}}))}/></label>
+<label>Hear word<input maxLength={180} value={site.labels?.hearWord||''} placeholder="Hear word" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),hearWord:e.target.value}}))}/></label>
+<label>Hear sentence<input maxLength={180} value={site.labels?.hearSentence||''} placeholder="Hear sentence" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),hearSentence:e.target.value}}))}/></label>
+<label>Words mastered<input maxLength={180} value={site.labels?.wordsMastered||''} placeholder="Words mastered" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),wordsMastered:e.target.value}}))}/></label>
+<label>Today's words<input maxLength={180} value={site.labels?.todaysWords||''} placeholder="Today's words" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),todaysWords:e.target.value}}))}/></label>
+<label>Learning streak<input maxLength={180} value={site.labels?.learningStreak||''} placeholder="Learning streak" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),learningStreak:e.target.value}}))}/></label>
+<label>Current week<input maxLength={180} value={site.labels?.currentWeek||''} placeholder="Current week" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),currentWeek:e.target.value}}))}/></label>
+<label>Target<input maxLength={180} value={site.labels?.target||''} placeholder="Target" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),target:e.target.value}}))}/></label>
+<label>days remaining<input maxLength={180} value={site.labels?.daysRemaining||''} placeholder="days remaining" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),daysRemaining:e.target.value}}))}/></label>
+<label>Word recall<input maxLength={180} value={site.labels?.wordRecall||''} placeholder="Word recall" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),wordRecall:e.target.value}}))}/></label>
+<label>Sentence hint<input maxLength={180} value={site.labels?.sentenceHint||''} placeholder="Sentence hint" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),sentenceHint:e.target.value}}))}/></label>
+<label>Word typing<input maxLength={180} value={site.labels?.wordTyping||''} placeholder="Word typing" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),wordTyping:e.target.value}}))}/></label>
+<label>Sentence typing<input maxLength={180} value={site.labels?.sentenceTyping||''} placeholder="Sentence typing" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),sentenceTyping:e.target.value}}))}/></label>
+<label>Listen & type<input maxLength={180} value={site.labels?.listenType||''} placeholder="Listen & type" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),listenType:e.target.value}}))}/></label>
+<label>Check answer<input maxLength={180} value={site.labels?.checkAnswer||''} placeholder="Check answer" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),checkAnswer:e.target.value}}))}/></label>
+<label>Try again<input maxLength={180} value={site.labels?.tryAgain||''} placeholder="Try again" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),tryAgain:e.target.value}}))}/></label>
+<label>Next sentence<input maxLength={180} value={site.labels?.nextSentence||''} placeholder="Next sentence" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),nextSentence:e.target.value}}))}/></label>
+<label>Try sample mock<input maxLength={180} value={site.labels?.sampleMock||''} placeholder="Try sample mock" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),sampleMock:e.target.value}}))}/></label>
+<label>Start mock<input maxLength={180} value={site.labels?.startMock||''} placeholder="Start mock" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),startMock:e.target.value}}))}/></label>
+<label>Start revision<input maxLength={180} value={site.labels?.startRevision||''} placeholder="Start revision" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),startRevision:e.target.value}}))}/></label>
+<label>Submit entire test<input maxLength={180} value={site.labels?.submitTest||''} placeholder="Submit entire test" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),submitTest:e.target.value}}))}/></label>
+<label>Confirm submission<input maxLength={180} value={site.labels?.confirmSubmit||''} placeholder="Confirm submission" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),confirmSubmit:e.target.value}}))}/></label>
+<label>Keep answering<input maxLength={180} value={site.labels?.keepAnswering||''} placeholder="Keep answering" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),keepAnswering:e.target.value}}))}/></label>
+<label>Next word<input maxLength={180} value={site.labels?.nextWord||''} placeholder="Next word" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),nextWord:e.target.value}}))}/></label>
+<label>Previous word<input maxLength={180} value={site.labels?.previousWord||''} placeholder="Previous word" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),previousWord:e.target.value}}))}/></label>
+<label>Learning day<input maxLength={180} value={site.labels?.learnDay||''} placeholder="Learning day" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),learnDay:e.target.value}}))}/></label>
+<label>Test history<input maxLength={180} value={site.labels?.testHistory||''} placeholder="Test history" onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),testHistory:e.target.value}}))}/></label>
+<label>Practice this word carefully and check your answers.<input maxLength={180} value={site.labels?.practiceInstructions||''} placeholder="Practice this word carefully and check your answers." onChange={e=>setSite((s:any)=>({...s,labels:{...(s.labels||{}),practiceInstructions:e.target.value}}))}/></label>
+  </div>
+ </details>
    <button className="primary" disabled={busy} onClick={()=>void action({action:'siteSettings',settings:site})}>Publish branding and content</button>
   </section>
 
@@ -126,7 +159,7 @@ export default function AdminManagement({users,words,onRefresh,onSettings}:{
      <button className="outline" disabled={!wordId||busy} onClick={()=>void action({action:'excludeWord',wordId,exclude:false})}>Restore word</button>
     </div>
     <small>{Object.keys(learner.adminWordDays||{}).length} custom day assignments · {(learner.adminExcludedWords||[]).length} excluded words</small>
-    <h3>Individual assessment decisions</h3>
+    <h3>Custom example sentence for this learner</h3><p>Add a personal bilingual sentence to a chosen word. The sentence appears in the learner’s practice.</p><label>English sentence<textarea rows={2} maxLength={1500} value={extraEnglish} onChange={e=>setExtraEnglish(e.target.value)}/></label><label>Bangla translation<textarea rows={2} maxLength={1500} value={extraBengali} onChange={e=>setExtraBengali(e.target.value)}/></label><button className="outline" disabled={!wordId||!extraEnglish.trim()||busy} onClick={()=>void action({action:'customExample',wordId,english:extraEnglish,bengali:extraBengali},()=>{setExtraEnglish('');setExtraBengali('')})}>Add sentence to learner</button><h3>Individual assessment decisions</h3>
     {(learner.attempts||[]).slice(-15).reverse().map(a=><div className="notice" key={a.id||String(a.week)+a.date}><span>{a.kind} Week {a.week} — {a.score}/{a.total} ({Math.round((a.score||0)/Math.max(1,a.total)*100)}%) · {a.adminOverride===true?'Admin pass':a.passed?'Passed':'Not passed'}</span><button className="outline" disabled={busy} onClick={()=>void action({action:'overrideAttempt',attemptId:a.id,approve:a.adminOverride!==true})}>{a.adminOverride===true?'Revoke override':'Approve pass'}</button></div>)}
     {!(learner.attempts||[]).length&&<p>No tests submitted yet. Use the existing control desk to assign a test or record a manual pass.</p>}
    </>}
