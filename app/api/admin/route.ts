@@ -77,6 +77,26 @@ if(!(await vocabulary(u.userId)).some(w=>(w.id||w.word)===q.wordId))throw Error(
  if(!Number.isInteger(day)||day<0||day>Number(s.track||120))throw Error('Invalid learning day.');
  s.adminWordDays={...(s.adminWordDays||{})};
  if(day===0)delete s.adminWordDays[key];else s.adminWordDays[key]=day;
+}else if(d.action==='bulkWords'){
+ const day=Number(d.day),mode=String(d.mode||'assign');
+ const tokens=String(d.words||'').split(/[\n,;]/).map(x=>x.trim().toLowerCase()).filter(Boolean);
+ if(!['assign','exclude','restore'].includes(mode)||tokens.length<1||tokens.length>200)throw Error('Provide 1–200 vocabulary words or IDs.');
+ if(mode==='assign'&&(!Number.isInteger(day)||day<1||day>Number(s.track||120)))throw Error('Choose a valid day.');
+ const shared=await readRecord('shared-vocabulary-v2',[]);
+ const personal=await readRecord('personal-words:'+target,[]);
+ const available=[...shared,...personal];
+ const resolved=tokens.map(t=>available.find((w:any)=>wordKey(w).toLowerCase()===t||w.word.toLowerCase()===t));
+ const missing=tokens.filter((_,i)=>!resolved[i]);
+ if(missing.length)throw Error('Unknown words: '+missing.slice(0,5).join(', '));
+ const ids=[...new Set(resolved.map((w:any)=>wordKey(w)))];
+ if(mode==='assign'){
+  s.adminWordDays={...(s.adminWordDays||{})};
+  for(const id of ids)s.adminWordDays[id]=day;
+ }else{
+  const excluded=new Set<string>(s.adminExcludedWords||[]);
+  for(const id of ids){if(mode==='exclude')excluded.add(id);else excluded.delete(id);}
+  s.adminExcludedWords=[...excluded];
+ }
 }else if(d.action==='excludeWord'){
  const key=String(d.wordId||'');
  const shared=await readRecord('shared-vocabulary-v2',[]);
