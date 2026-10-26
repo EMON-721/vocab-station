@@ -13,9 +13,9 @@ The full source snapshot is uploaded through the connected GitHub account. Repos
 - `ADMIN_EMAIL`: the current implementation uses this server-only value to determine administrator access. No actual value is included. The owner requested that changes to this mechanism be deferred.
 - R2 storage is not required by the current application.
 
-Hosted authentication is supplied by Sites. This GitHub upload does not create Google OAuth or a portable production authentication service.
+Production Google OAuth sign-in and D1 sessions are now implemented. See GOOGLE_LOGIN_SETUP.md for the required Google Cloud credentials, Cloudflare secrets and auth_sessions migration. Existing Sites-hosted user records are not migrated automatically.
 
-For portable loopback development only, visit `/signin-with-chatgpt?return_to=/` to use the starter's local simulated account. It is not production authentication.
+Portable local development now requires separately configured Google OAuth credentials and a matching authorized callback URI. The old Sites simulated login is no longer accepted.
 
 ## Source boundaries
 

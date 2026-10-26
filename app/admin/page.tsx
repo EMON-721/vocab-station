@@ -1,4 +1,4 @@
-import {requireChatGPTUser} from '../chatgpt-auth';
+import {requireSignedInUser} from '../google-auth';
 import {auth} from '../data-server';
 import {redirect} from 'next/navigation';
 export const dynamic='force-dynamic';

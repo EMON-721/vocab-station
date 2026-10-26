@@ -1,4 +1,4 @@
-import {getChatGPTUser} from '../../chatgpt-auth';
+import {getSignedInUser} from '../../google-auth';
 export async function GET(request:Request){
  if(!await getChatGPTUser())return Response.json({error:'Sign in to use dictionary lookup.'},{status:401});
  const word=new URL(request.url).searchParams.get('word')||'';

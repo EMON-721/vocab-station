@@ -5,7 +5,7 @@ import {seed,wordKey,type Word} from './words';
 import {academicWords} from './academic-words';
 import {newWords} from './new-words';
 import {expandedWords} from './expanded-words';
-import {getChatGPTUser} from './chatgpt-auth';
+import {getSignedInUser} from './google-auth';
 export async function auth(){const user=await getChatGPTUser();return user?{...user,role:env.ADMIN_EMAIL&&user.email.toLowerCase()===env.ADMIN_EMAIL.toLowerCase()?'ADMIN':'USER'}:null;}
 export async function readRecord(id:string,fallback:any=null){const row=await env.DB!.prepare('SELECT data FROM records WHERE id=?').bind(id).first<{data:string}>();return row?JSON.parse(row.data):fallback;}
 export async function writeRecord(id:string,value:unknown){await env.DB!.prepare('INSERT INTO records(id,data) VALUES(?,?) ON CONFLICT(id) DO UPDATE SET data=excluded.data').bind(id,JSON.stringify(value)).run();}

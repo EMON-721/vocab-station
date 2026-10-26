@@ -32,7 +32,7 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-On ordinary local checkouts the project uses the portable runtime profile. Use the URL printed by the development server. Local sign-in simulation is documented in `SETUP.md`; production sign-in is supplied by Sites.
+On ordinary local checkouts the project uses the portable runtime profile. Use the URL printed by the development server. Google OAuth setup and secure D1 session details are in `GOOGLE_LOGIN_SETUP.md`. Production sign-in requires Google Cloud credentials and Cloudflare Worker secrets.
 
 ```sh
 pnpm build
@@ -52,7 +52,7 @@ These checks cover curriculum integrity, duplicate rejection, stable original da
 
 ## Data and privacy
 
-Runtime credentials, environment values, user records, database exports, build output and dependencies are excluded from this source package. Configure runtime bindings separately. Existing email-based administrator logic is preserved at the owner's request and was not changed as part of this GitHub export.
+Runtime credentials, environment values, user records, database exports, build output and dependencies are excluded from this source package. Configure runtime bindings separately. Administrator access still depends on the server-only ADMIN_EMAIL variable, now matched against a verified Google account email.
 
 ## Content and licences
 
