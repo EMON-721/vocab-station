@@ -61,8 +61,9 @@ if(!(await vocabulary(u.userId)).some(w=>(w.id||w.word)===q.wordId))throw Error(
  if(day===0)delete s.adminWordDays[key];else s.adminWordDays[key]=day;
 }else if(d.action==='excludeWord'){
  const key=String(d.wordId||'');
- const shared=await vocabulary(target);
- if(!shared.some(w=>wordKey(w)===key))throw Error('Word not found.');
+ const shared=await readRecord('shared-vocabulary-v2',[]);
+ const personal=await readRecord('personal-words:'+target,[]);
+ if(![...shared,...personal].some((w:any)=>wordKey(w)===key))throw Error('Word not found.');
  const previous=(s.adminExcludedWords||[]).filter((x:string)=>x!==key);
  s.adminExcludedWords=d.exclude?[...previous,key]:previous;
 }else if(d.action==='overrideAttempt'){
