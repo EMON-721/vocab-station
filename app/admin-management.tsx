@@ -39,7 +39,7 @@ export default function AdminManagement({users,words,onRefresh,onSettings}:{
 
  async function load(){
   try{
-   const r=await fetch('/api/admin',{cache:'no-store'}),d=await r.json();
+   const r=await fetch('/api/admin',{cache:'no-store'});const d:any=await r.json();
    if(!r.ok)throw Error(d.error);
    setSite({...defaultSite,...(d.settings||{})});
    setRequests(d.wordRequests||[]);
