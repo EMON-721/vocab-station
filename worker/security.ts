@@ -2,7 +2,6 @@
  * Defense in depth at the Workers ingress. Never trust browser-supplied role,
  * identity, or user-id headers. Production sessions come only from D1.
  */
-import type { Env as CfEnv } from "cloudflare:workers";
 type RuntimeEnv = Cloudflare.Env;
 const API_WRITE = new Set(["POST", "PUT", "PATCH", "DELETE"]);
 function deny(message: string, status: number, retryAfter?: number): Response {
