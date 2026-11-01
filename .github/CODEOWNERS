@@ -1,0 +1,8 @@
+# Security-sensitive changes need owner review when branch protection is enabled.
+* @EMON-721
+/.github/ @EMON-721
+/app/api/ @EMON-721
+/app/google-auth.ts @EMON-721
+/app/gemini-assessment.ts @EMON-721
+/app/data-server.ts @EMON-721
+/worker/ @EMON-721
