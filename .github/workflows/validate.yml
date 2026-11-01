@@ -11,6 +11,8 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -24,6 +26,8 @@ jobs:
         run: ./node_modules/.bin/tsc --noEmit
       - name: Security policy checks
         run: node scripts/check-security.mjs
+      - name: Git history secret-pattern scan
+        run: node scripts/check-history-secrets.mjs
       - name: Dependency audit (high or critical)
         run: pnpm audit --audit-level high
       - name: Vocabulary checks

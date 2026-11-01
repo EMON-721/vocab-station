@@ -4,6 +4,7 @@ declare namespace Cloudflare {
     GEMINI_API_KEY?: string;
     GEMINI_ENCRYPTION_KEY?: string;
     ADMIN_EMAIL?: string;
+    ADMIN_GOOGLE_SUB?: string;
     GOOGLE_CLIENT_ID?: string;
     GOOGLE_CLIENT_SECRET?: string;
     SITE_ORIGIN?: string;
