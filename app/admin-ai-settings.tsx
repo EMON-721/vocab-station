@@ -1,3 +1,39 @@
 'use client';
 import {useEffect,useState} from 'react';
-export default function AdminAISettings(){const [status,setStatus]=useState<any>(null),[key,setKey]=useState(''),[model,setModel]=useState('gemini-2.5-flash'),[enabled,setEnabled]=useState(true),[busy,setBusy]=useState(false),[message,setMessage]=useState('');useEffect(()=>{fetch('/api/admin/ai').then(async r=>{const d=await r.json() as any;if(!r.ok)throw Error(d.error);setStatus(d);setModel(d.model);setEnabled(d.enabled)}).catch(e=>setMessage(e.message))},[]);async function action(kind:string,removeKey=false){setBusy(true);setMessage('');try{const r=await fetch('/api/admin/ai',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(kind==='test'?{action:'test'}:{action:'save',apiKey:key,model,enabled,removeKey})});const d:any=await r.json();if(!r.ok)throw Error(d.error);if(kind==='save'){setStatus(d);setKey('');setMessage(removeKey?'Saved UI key removed. Environment key, if configured, remains active.':'AI settings saved. Use Test connection to verify your key and model.')}else setMessage(d.message)}catch(e:any){setMessage(e.message)}finally{setBusy(false)}}return <section className="panel settings-panel ai-settings" id="admin-ai-connection" aria-label="Administrator Gemini API connection"><h2>Administrator · Google AI Studio API</h2><p>Paste your Google AI Studio API key below, save it, then test the connection. Gemini assesses the five exam sentences and requested sentence practice. The key is used on the server and never returned to learners.</p><p><strong>{status?.configured?'Key configured':'Not connected'}</strong> · {enabled?'Enabled':'Disabled'}</p><form onSubmit={e=>{e.preventDefault();void action('save')}}><label>Paste Google AI Studio API key<input type="password" autoComplete="off" spellCheck={false} value={key} onChange={e=>setKey(e.target.value)} placeholder={status?.configured?'Leave blank to keep the current key':'Paste your Google AI Studio API key'}/></label><label>Gemini model ID<input required pattern="gemini-[a-z0-9.-]+" value={model} onChange={e=>setModel(e.target.value)}/></label><label className="checkbox-line"><input type="checkbox" checked={enabled} onChange={e=>setEnabled(e.target.checked)}/>Enable AI assessment</label><div className="practice-controls"><button className="primary" disabled={busy} type="submit">Save API key</button><button className="outline" disabled={busy||!status?.configured} type="button" onClick={()=>action('test')}>Test connection</button>{status?.keySource==='encrypted-settings'&&<button className="outline" type="button" disabled={busy} onClick={()=>action('save',true)}>Remove saved key</button>}</div></form><p role="status">{busy?'Working…':message}</p><small>The Test connection action sends one short sample to Google. Learner writing is sent to Google only for requested AI assessment. Model usage is billed to your Google project. A server encryption secret is required to save a key; an existing Google OAuth server secret is supported.</small></section>}
+export default function AdminAISettings(){
+ const [status,setStatus]=useState<any>(null),[key,setKey]=useState(''),[model,setModel]=useState('gemini-2.5-flash'),[enabled,setEnabled]=useState(true),[busy,setBusy]=useState(false),[message,setMessage]=useState(''),[error,setError]=useState(''),[connected,setConnected]=useState(false);
+ useEffect(()=>{fetch('/api/admin/ai',{cache:'no-store'}).then(async r=>{const d:any=await r.json();if(!r.ok)throw Error(d.error);setStatus(d);setModel(d.model);setEnabled(d.enabled)}).catch(e=>setError(e.message))},[]);
+ async function action(kind:'save'|'test',removeKey=false){
+  setBusy(true);setError('');setMessage('');setConnected(false);
+  // Test always saves edited fields first, so it cannot accidentally test an old key/model.
+  const saveFirst=!removeKey&&(kind==='save'||!!key.trim()||model!==status?.model||enabled!==status?.enabled);
+  try{
+   const response=await fetch('/api/admin/ai',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(saveFirst?{action:'save-test',apiKey:key,model,enabled}:{action:kind,apiKey:key,model,enabled,removeKey})});
+   let d:any;try{d=await response.json()}catch{throw Error(`Server returned an unreadable response (${response.status}). Your entered key is still in the field; retry.`)}
+   if(d.saved||response.ok&&kind==='save'){
+    setStatus(d);setKey('');setMessage(removeKey?'Saved profile key removed. A server environment key, if configured, is now used.':'API key/settings saved securely. The password field is cleared for privacy; the saved key remains on the server.');
+   }
+   if(!response.ok)throw Error(d.error||`Connection request failed (${response.status}).`);
+   if(d.ok){setConnected(true);setMessage('API key saved / available. Gemini connection and sentence assessment verified successfully.');}
+  }catch(e:any){setError(e.message||'Could not connect. Please retry.')}finally{setBusy(false)}
+ }
+ return <section className="panel settings-panel ai-settings" id="admin-ai-connection" aria-label="Administrator Gemini API connection">
+  <h2>Administrator · Google AI Studio API</h2>
+  <p>Connect Gemini to assess the five exam sentences and requested sentence practice. Your API key stays on the server.</p>
+  <p><strong>{connected?'Connected · assessment verified':status?.configured?'API key saved · connection not yet verified in this session':'No API key saved'}</strong> · {enabled?'Enabled':'Disabled'}</p>
+  {status?.updatedAt&&<p className="muted">Settings last saved: {new Date(status.updatedAt).toLocaleString()}</p>}
+  <form onSubmit={e=>{e.preventDefault();void action('save')}}>
+   <label>Paste Google AI Studio API key<input type="password" autoComplete="off" spellCheck={false} value={key} onChange={e=>{setKey(e.target.value);setConnected(false)}} placeholder={status?.configured?'A key is saved. Paste only to replace it.':'Paste your Google AI Studio API key'}/></label>
+   <small>{status?.configured?'An empty field does not mean your key is missing. Saved keys are never displayed again.':'Paste an active Gemini API key, then select Save API key & connect.'}</small>
+   <label>Gemini model ID<input required pattern="gemini-[a-z0-9.-]+" value={model} onChange={e=>{setModel(e.target.value);setConnected(false)}}/></label>
+   <label className="checkbox-line"><input type="checkbox" checked={enabled} onChange={e=>{setEnabled(e.target.checked);setConnected(false)}}/>Enable AI assessment</label>
+   <div className="practice-controls">
+    <button className="primary" disabled={busy||!status||!key.trim()&&!status.configured} type="submit">{busy?'Connecting…':'Save API key & connect'}</button>
+    <button className="outline" disabled={busy||!status||!key.trim()&&!status.configured} type="button" onClick={()=>action('test')}>Test connection</button>
+    {status?.keySource==='encrypted-settings'&&<button className="outline" type="button" disabled={busy} onClick={()=>action('save',true)}>Remove saved key</button>}
+   </div>
+  </form>
+  <div aria-live="polite">{busy&&<p>Saving and checking Gemini… This can take up to one minute.</p>}{message&&<p role="status">{message}</p>}{error&&<p role="alert" className="ai-connection-error">{error}</p>}</div>
+  <small>Connection testing sends one short sample to Google. Usage is billed to your Google project. Saving and connection verification are separate results; a failed test keeps your saved key.</small>
+ </section>
+}

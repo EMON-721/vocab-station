@@ -13,7 +13,7 @@ Never paste the key into chat, commit it to GitHub, or put it in a public/client
 
 The saved key is AES-GCM encrypted in a separate private D1 record. Encryption uses the server-only `GEMINI_ENCRYPTION_KEY` secret, or the existing `GOOGLE_CLIENT_SECRET` as a fallback. Prefer a dedicated random encryption secret. If the encryption secret changes, reconnect the saved Gemini key. No database migration is required.
 
-Alternatively set the Worker secret `GEMINI_API_KEY`. An environment key takes precedence over an encrypted UI key; removing a UI key does not remove a Worker secret. Settings endpoints require administrator access and never return the key or encrypted record.
+Alternatively set the Worker secret `GEMINI_API_KEY`. An encrypted profile key takes precedence over an environment key; removing a UI key does not remove a Worker secret. Settings endpoints require administrator access and never return the key or encrypted record.
 
 ## Exams and scoring
 
