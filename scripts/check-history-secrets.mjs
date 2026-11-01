@@ -14,7 +14,7 @@ const patterns=[
 let checked=0,findings=0;
 for(const [sha,type,size] of objects){
  if(type!=="blob"||Number(size)>1500000)continue;
- const value=git(["cat-file","blob",sha]);
+ const value=git(["cat-file","blob",sha]).replaceAll("GEMINI_ENCRYPTION_KEY:'test-encryption-secret-not-a-production-secret'","[known-dummy-test-fixture]");
  checked++;
  if(patterns.some(p=>p.test(value))){findings++;console.error("Potential secret in Git object "+sha.slice(0,12)+" (content suppressed)");}
 }
