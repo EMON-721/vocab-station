@@ -40,8 +40,8 @@ async function authenticatedIdentity(request: Request, env: RuntimeEnv): Promise
   const token=cookieValue(request,"__Host-vs_session");
   if (!token || !/^[a-zA-Z0-9_-]{43}$/.test(token) || !env.DB) return null;
   const hashed=await digest(token);
-  const session=await env.DB.prepare("SELECT user_id FROM auth_sessions WHERE id=? AND expires_at>?")
-    .bind(hashed, Date.now()).first<{user_id:string}>();
+  const session=await env.DB.prepare("SELECT user_id FROM auth_sessions WHERE id=? AND expires_at>? AND created_at>?")
+    .bind(hashed, Date.now(), Date.now()-7*24*60*60*1000).first<{user_id:string}>();
   return session?.user_id || null;
 }
 /**

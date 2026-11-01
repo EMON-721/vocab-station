@@ -26,6 +26,8 @@ jobs:
         run: ./node_modules/.bin/tsc --noEmit
       - name: Security policy checks
         run: node scripts/check-security.mjs
+      - name: Ingress security behavior tests
+        run: node scripts/check-ingress.mjs
       - name: Git history secret-pattern scan
         run: node scripts/check-history-secrets.mjs
       - name: Dependency audit (high or critical)

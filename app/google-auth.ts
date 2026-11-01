@@ -12,7 +12,7 @@ export type SignedInUser = {
 
 export const SESSION_COOKIE = "__Host-vs_session";
 export const OAUTH_COOKIE = "__Host-vs_oauth";
-export const SESSION_SECONDS = 30 * 24 * 60 * 60;
+export const SESSION_SECONDS = 7 * 24 * 60 * 60;
 
 export function safeReturnPath(value: string | null | undefined): string {
   if (!value || value.length > 2048 || !value.startsWith("/") || value.startsWith("//")) return "/";
@@ -82,8 +82,8 @@ export async function getSignedInUser(): Promise<SignedInUser | null> {
   try {
     const id = await sha256Hex(session);
     const row = await env.DB.prepare(
-      "SELECT user_id, email, display_name FROM auth_sessions WHERE id = ? AND expires_at > ?"
-    ).bind(id, Date.now()).first<{ user_id: string; email: string; display_name: string }>();
+      "SELECT user_id, email, display_name FROM auth_sessions WHERE id = ? AND expires_at > ? AND created_at > ?"
+    ).bind(id, Date.now(), Date.now() - SESSION_SECONDS * 1000).first<{ user_id: string; email: string; display_name: string }>();
     if (!row) return null;
     return {
       userId: row.user_id,
