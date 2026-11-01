@@ -1,0 +1,43 @@
+name: Verify Zod security major upgrade
+on:
+  push:
+    branches: [security/zod-patch]
+permissions:
+  contents: write
+jobs:
+  test:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: security/zod-patch
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          corepack enable
+          corepack prepare pnpm@11.25.0 --activate
+      - run: pnpm install --frozen-lockfile
+      - name: Upgrade vulnerable Zod
+        run: pnpm up zod@4.6.6
+      - name: Verify app and security
+        run: |
+          pnpm exec tsc --noEmit
+          node scripts/check-security.mjs
+          node scripts/check-ingress.mjs
+          node scripts/check-vocabulary.mjs
+          node scripts/check-assessment-v3.mjs
+          node scripts/check-access.mjs
+          node scripts/check-gemini-assessment.mjs
+          pnpm build
+      - name: Commit only after verification passes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json pnpm-lock.yaml
+          if ! git diff --cached --quiet; then
+            git commit -m "Security: update Zod to patched major release"
+            git push origin HEAD:security/zod-patch
+          fi
