@@ -8,6 +8,7 @@ declare namespace Cloudflare {
     GOOGLE_CLIENT_SECRET?: string;
     SITE_ORIGIN?: string;
     LEARNING_ENABLED?: string;
+    AI_DAILY_LIMIT?: string;
     BUCKET?: R2Bucket;
   }
 }

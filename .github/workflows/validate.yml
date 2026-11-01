@@ -22,6 +22,10 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: TypeScript typecheck
         run: ./node_modules/.bin/tsc --noEmit
+      - name: Security policy checks
+        run: node scripts/check-security.mjs
+      - name: Dependency audit (high or critical)
+        run: pnpm audit --audit-level high
       - name: Vocabulary checks
         run: |
           node scripts/check-vocabulary.mjs
