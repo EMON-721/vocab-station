@@ -70,3 +70,12 @@ No branch-protection or repository permission setting is created by this README.
 ## Gemini assessment
 
 Connect Google AI Studio securely in the administrator workspace. New standard tests include 30 objective questions and 5 scored sentence-writing questions. Learners can request AI feedback for up to four practice sentences. See `GEMINI_SETUP.md` for key setup and validation.
+
+<!-- DEPLOYMENT LINKS: maintained for GitHub repository navigation -->
+## Website & repository links
+
+- **Source repository:** https://github.com/EMON-721/vocab-station
+- **Published website URL:** https://vocab-station.emon721.workers.dev
+- **Availability:** Deployment URL recorded; live HTTP reachability could not be independently verified on 1 November 2026.
+
+<!-- END DEPLOYMENT LINKS -->
