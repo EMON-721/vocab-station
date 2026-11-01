@@ -1,25 +1,25 @@
+# Security-only Dependabot configuration.
+# Routine version upgrades are reviewed manually to avoid breaking production.
+# Keep Dependabot security updates enabled in repository settings.
 version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 3
+    open-pull-requests-limit: 0
     groups:
-      routine-minor-patches:
-        applies-to: version-updates
+      security-dependency-fixes:
+        applies-to: security-updates
         patterns:
           - "*"
-        update-types:
-          - "minor"
-          - "patch"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 2
+    open-pull-requests-limit: 0
     groups:
-      actions-updates:
-        applies-to: version-updates
+      security-action-fixes:
+        applies-to: security-updates
         patterns:
           - "*"
