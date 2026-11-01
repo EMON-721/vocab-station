@@ -9,10 +9,10 @@ English vocabulary learning with Bengali meanings, example sentences, typing pra
 - 4,081 vocabulary entries with English practice sentences, including 563 unique additions from the owner-provided PDF.
 - 120, 150 and 180-day learning plans; 34–35 words/day on the 120-day plan.
 - Sequential daily completion and 90% weekly pass requirement.
-- 30 scored questions and two separate writing tasks; 15-minute assessments.
+- 30 objective questions and five AI-scored writing tasks; 15-minute assessments.
 - Required revision after every two weekly mocks.
 - A sample mock; unanswered questions can be submitted; persisted results can be retrieved by retry without duplicate attempts.
-- Local Hunspell spelling and supported grammar-rule feedback with highlighted issues and suggestions. This is not a full AI or semantic evaluator.
+- Google Gemini sentence assessment with grammar, vocabulary-use and meaning feedback; local spelling/rule checks are also available.
 - Persistent learner profiles, unique usernames/IDs, private progress/history and personal vocabulary.
 - Administrator workspace for vocabulary, learners, assessments and messages.
 
@@ -65,3 +65,8 @@ See `SETUP.md` for configuration and `SOURCE_SNAPSHOT.json` for the source commi
 Private visibility restricts source access to authorised accounts. If this repository becomes public, its committed source code can be read and copied; public visibility does not hide code. Public visitors do not gain permission to push changes to this repository or administer the live application. Only explicitly authorised collaborators can write to GitHub, and the deployed server separately checks administrator access. Keep tokens, runtime environment values and user database records outside Git. Review collaborators, branch rules and deployment credentials before making the repository public.
 
 No branch-protection or repository permission setting is created by this README. Repository access controls must be configured in GitHub Settings.
+
+
+## Gemini assessment
+
+Connect Google AI Studio securely in the administrator workspace. New standard tests include 30 objective questions and 5 scored sentence-writing questions. Learners can request AI feedback for up to four practice sentences. See `GEMINI_SETUP.md` for key setup and validation.

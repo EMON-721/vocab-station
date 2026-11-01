@@ -33,7 +33,7 @@ export default function AdminManagement({users,words,onRefresh,onSettings}:{
  const [day,setDay]=useState(1),[mode,setMode]=useState('allow');
  const [bulkText,setBulkText]=useState(''),[editExampleIndex,setEditExampleIndex]=useState<number|null>(null),[extraEnglish,setExtraEnglish]=useState(''),[extraBengali,setExtraBengali]=useState(''),[assignDay,setAssignDay]=useState(1),[query,setQuery]=useState(''),[wordId,setWordId]=useState('');
  const [week,setWeek]=useState(1),[assessmentKind,setAssessmentKind]=useState('Weekly');
- const [test,setTest]=useState<any>({enabled:true,questionCount:30,timeSeconds:900,passPercent:90,writingCount:2,requireAll:false,showAnswers:true,title:'Week 1 test'});
+ const [test,setTest]=useState<any>({enabled:true,questionCount:30,timeSeconds:900,passPercent:90,writingCount:5,requireAll:false,showAnswers:true,title:'Week 1 test'});
  const learner=users.find(u=>u.id===selected);
  const candidates=useMemo(()=>words.filter(w=>(w.word+' '+w.bengali_meaning).toLowerCase().includes(query.toLowerCase())).slice(0,35),[words,query]);
 
@@ -47,7 +47,7 @@ export default function AdminManagement({users,words,onRefresh,onSettings}:{
   }catch(e:any){setStatus(e.message||'Cannot load administrator settings');}
  }
  useEffect(()=>{void load()},[]);
- useEffect(()=>{setTest({enabled:true,questionCount:30,timeSeconds:900,passPercent:90,writingCount:2,requireAll:false,showAnswers:true,title:'Week '+week+' '+assessmentKind+' test',...(tests[String(week)+(assessmentKind==='Revision'?':Revision':'')]||{})})},[week,tests,assessmentKind]);
+ useEffect(()=>{setTest({enabled:true,questionCount:30,timeSeconds:900,passPercent:90,writingCount:5,requireAll:false,showAnswers:true,title:'Week '+week+' '+assessmentKind+' test',...(tests[String(week)+(assessmentKind==='Revision'?':Revision':'')]||{})})},[week,tests,assessmentKind]);
  useEffect(()=>{if(learner){setDay(1);setAssignDay(1)}},[selected]);
  async function action(payload:any,done?:()=>void){
   if(busy)return;setBusy(true);setStatus('Saving…');
@@ -174,7 +174,7 @@ export default function AdminManagement({users,words,onRefresh,onSettings}:{
     <label>Scored objective questions<input type="number" min={5} max={60} value={test.questionCount} onChange={e=>setTest({...test,questionCount:Number(e.target.value)})}/></label>
     <label>Time (seconds)<input type="number" min={60} max={7200} value={test.timeSeconds} onChange={e=>setTest({...test,timeSeconds:Number(e.target.value)})}/></label>
     <label>Pass percentage<input type="number" min={1} max={100} value={test.passPercent} onChange={e=>setTest({...test,passPercent:Number(e.target.value)})}/></label>
-    <label>Writing questions<input type="number" min={0} max={2} value={test.writingCount} onChange={e=>setTest({...test,writingCount:Number(e.target.value)})}/></label>
+    <label>AI-scored writing questions<input type="number" min={5} max={5} readOnly value={5} onChange={e=>setTest({...test,writingCount:Number(e.target.value)})}/></label>
    </div>
    <div className="practice-controls">
     <label><input type="checkbox" checked={test.enabled!==false} onChange={e=>setTest({...test,enabled:e.target.checked})}/> Test enabled</label>
@@ -200,3 +200,4 @@ export default function AdminManagement({users,words,onRefresh,onSettings}:{
   <p role="status" aria-live="polite">{status}</p>
  </div>;
 }
+

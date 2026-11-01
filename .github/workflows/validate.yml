@@ -27,5 +27,7 @@ jobs:
           node scripts/check-vocabulary.mjs
           node scripts/check-assessment-v3.mjs
           node scripts/check-access.mjs
+          node scripts/check-gemini-assessment.mjs
       - name: Production build
         run: pnpm build
+

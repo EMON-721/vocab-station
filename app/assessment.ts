@@ -18,4 +18,5 @@ export function correctAnswer(q:any,value:string){
  return(q.accepted||[q.answer]).some((a:string)=>a.trim().toLowerCase()===(value||'').trim().toLowerCase());
 }
 
-export function sentenceQuestions(pool:Word[]){return shuffle(pool.filter(w=>w.simple_example)).concat(pool.filter(w=>!w.simple_example)).slice(0,2).map(w=>({w,writing:true,typed:true,type:'OWN_SENTENCE',band:difficulty(w),target:w.word,prompt:`Write an original English sentence using “${w.word}”.`,hint:'Writing feedback only: this response does not change your objective test score.',answer:w.simple_example,accepted:[],options:[],explanation:'An original sentence has many possible correct answers. Automated basic checks are not a full grammar assessment.'}));}
+export function sentenceQuestions(pool:Word[],count=5){return shuffle(pool.filter(w=>w.simple_example)).concat(pool.filter(w=>!w.simple_example)).slice(0,count).map(w=>({w,writing:true,typed:true,type:'OWN_SENTENCE',band:difficulty(w),target:w.word,prompt:`Write an original English sentence using “${w.word}”.`,hint:'AI-scored writing: grammar, vocabulary use and meaning count towards your test result.',answer:w.simple_example,accepted:[],options:[],explanation:'Write a meaningful original sentence. AI assesses grammar, vocabulary use and meaning; matching the reference is not required.'}));}
+
