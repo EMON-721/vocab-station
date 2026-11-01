@@ -32,3 +32,7 @@ The interface discloses that requested AI assessment sends the learner's sentenc
 ## Validation
 
 Run `node scripts/check-gemini-assessment.mjs` for deterministic provider fixtures covering encrypted key storage, access control, the 35-question total, the 90% boundary, missing writing, malformed/provider failures, frozen-answer retry and duplicate-result prevention. These fixtures use no real API key. Typecheck, existing regression tests and production build are separate checks. A real owner key and the administrator Test connection action are still required to verify the production Google connection.
+
+## Unavailable model (404)
+
+The administrator can load available Google models with the saved key and select one without exposing the key. Connection verification tests structured sentence assessment, not merely model listing. When the selected model returns 404, an explicit connection test checks up to three listed text-model alternatives and saves a replacement only after successful assessment. Other provider failures (including quota and permissions) stop recovery and are reported. Exam submissions use the saved model and never silently change models.
