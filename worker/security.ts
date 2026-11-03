@@ -84,6 +84,14 @@ export async function ingress(request:Request, env:RuntimeEnv):Promise<Response|
     const size=Number(request.headers.get("Content-Length")||0);
     if (size>2_600_000 || !Number.isFinite(size)) return deny("Request too large.",413);
   }
+  if (path==="/api/auth/email" && method==="POST") {
+    try {
+      const ip=request.headers.get("CF-Connecting-IP")||"unknown";
+      if (!await reserveQuota(env,"email-auth",ip,60,12) ||
+          !await reserveQuota(env,"email-auth",ip,86400,120))
+        return deny("Too many login attempts. Try again later.",429,60);
+    } catch { return deny("Authentication temporarily unavailable.",503); }
+  }
   let quotaGroup:string|null=null;
   if (method==="POST"&&["/api/sentence","/api/tests","/api/admin/ai"].includes(path)) {
     let value:any;
