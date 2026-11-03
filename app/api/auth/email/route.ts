@@ -3,102 +3,136 @@ import {
   SESSION_COOKIE, SESSION_SECONDS, base64url, cookieHeader, randomToken,
   safeReturnPath, sha256Hex,
 } from "../../../google-auth";
-import { getOrCreateLearnerAccount } from "../../../learner-identity";
+import { NEXT_LEARNER_ID_SQL } from "../../../learner-identity";
 
 const ITERATIONS = 260000;
 const enc = new TextEncoder();
-type Credential = {user_id:string;email:string;login_id:string;display_name:string;password_salt:string;password_hash:string};
-const json = (body:unknown, status=200, cookie?:string) => {
-  const headers: Record<string,string> = {"Cache-Control":"no-store","Pragma":"no-cache"};
-  if (cookie) headers["Set-Cookie"] = cookie;
+type Credential = {
+  user_id:string;email:string;login_id:string;display_name:string;
+  password_salt:string;password_hash:string
+};
+const json = (body:unknown,status=200,cookie?:string) => {
+  const headers:Record<string,string> = {"Cache-Control":"no-store","Pragma":"no-cache"};
+  if (cookie) headers["Set-Cookie"]=cookie;
   return Response.json(body,{status,headers});
 };
-const validEmail = (email:string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= 254;
-const validId = (id:string) => /^[a-z][a-z0-9_]{2,31}$/.test(id);
+const emailKey=(value:string)=>"email-auth:email:"+value;
+const loginKey=(value:string)=>"email-auth:login:"+value;
+const userKey=(value:string)=>"email-auth:user:"+value;
+const validEmail=(value:string)=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)&&value.length<=254;
+const validId=(value:string)=>/^[a-z][a-z0-9_]{2,31}$/.test(value);
+const nonempty=(value:unknown)=>typeof value==="string"?value:"";
 
-async function ensureCredentialsTable() {
-  if (!env.DB) throw Error("Database unavailable");
-  await env.DB.prepare(
-    "CREATE TABLE IF NOT EXISTS email_credentials (" +
-    "user_id TEXT PRIMARY KEY NOT NULL, email TEXT NOT NULL UNIQUE, " +
-    "login_id TEXT NOT NULL UNIQUE COLLATE NOCASE, display_name TEXT NOT NULL, " +
-    "password_salt TEXT NOT NULL, password_hash TEXT NOT NULL, created_at INTEGER NOT NULL)"
-  ).run();
+async function readRecord(id:string) {
+  const row=await env.DB!.prepare("SELECT data FROM records WHERE id=?")
+    .bind(id).first<{data:string}>();
+  return row?JSON.parse(row.data) as any:null;
+}
+async function readLegacyCredential(identifier:string):Promise<Credential|null> {
+  try {
+    // Read-only compatibility for accounts created by the previous implementation.
+    return await env.DB!.prepare(
+      "SELECT user_id,email,login_id,display_name,password_salt,password_hash " +
+      "FROM email_credentials WHERE email=? OR login_id=? LIMIT 1"
+    ).bind(identifier,identifier).first<Credential>();
+  } catch { return null; } // The optional old table may not have been migrated.
 }
 async function derivedPassword(password:string,salt:string) {
-  const raw = Uint8Array.from(atob(salt.replace(/-/g,"+").replace(/_/g,"/")),c=>c.charCodeAt(0));
-  const material = await crypto.subtle.importKey("raw",enc.encode(password),"PBKDF2",false,["deriveBits"]);
-  const bytes = await crypto.subtle.deriveBits({name:"PBKDF2",salt:raw,iterations:ITERATIONS,hash:"SHA-256"},material,256);
+  const raw=Uint8Array.from(atob(salt.replace(/-/g,"+").replace(/_/g,"/")),c=>c.charCodeAt(0));
+  const material=await crypto.subtle.importKey("raw",enc.encode(password),"PBKDF2",false,["deriveBits"]);
+  const bytes=await crypto.subtle.deriveBits({
+    name:"PBKDF2",salt:raw,iterations:ITERATIONS,hash:"SHA-256"
+  },material,256);
   return new Uint8Array(bytes);
 }
-function equalConstantTime(a:Uint8Array,b:Uint8Array):boolean{
+function equalConstantTime(a:Uint8Array,b:Uint8Array):boolean {
   if(a.length!==b.length)return false;
   let diff=0;for(let i=0;i<a.length;i++)diff|=a[i]^b[i];return diff===0;
 }
-async function setSession(userId:string,email:string,name:string) {
+async function createSession(userId:string,email:string,name:string) {
   const token=randomToken(),now=Date.now();
   await env.DB!.prepare(
     "INSERT INTO auth_sessions(id,user_id,email,display_name,expires_at,created_at) VALUES(?,?,?,?,?,?)"
   ).bind(await sha256Hex(token),userId,email,name,now+SESSION_SECONDS*1000,now).run();
   return cookieHeader(SESSION_COOKIE,token,SESSION_SECONDS);
 }
+async function findCredential(identifier:string):Promise<Credential|null> {
+  const ref=await readRecord(emailKey(identifier))||await readRecord(loginKey(identifier));
+  if(ref?.userId) {
+    const credential=await readRecord(userKey(ref.userId));
+    if(credential?.user_id) return credential as Credential;
+  }
+  return readLegacyCredential(identifier);
+}
 
-export async function POST(request:Request):Promise<Response>{
-  if (!env.DB) return json({error:"Sign-up is temporarily unavailable."},503);
-  if (Number(request.headers.get("content-length")||"0")>8192) return json({error:"Request too large."},413);
+export async function POST(request:Request):Promise<Response> {
+  if(!env.DB)return json({error:"The account database is not connected."},503);
+  if(Number(request.headers.get("content-length")||"0")>8192)
+    return json({error:"Request too large."},413);
   let input:Record<string,unknown>;
-  try { input=await request.json() as Record<string,unknown>; if(!input||typeof input!=="object")throw Error(); }
-  catch { return json({error:"Invalid request."},400); }
-  const action=input.action, password=typeof input.password==="string"?input.password:"";
-  const returnTo=safeReturnPath(typeof input.returnTo==="string"?input.returnTo:"/");
-  if (password.length<8||password.length>128) return json({error:"Password must be 8–128 characters."},400);
   try {
-    await ensureCredentialsTable();
-    if (action==="register") {
-      const name=typeof input.name==="string"?input.name.trim():"";
-      const email=typeof input.email==="string"?input.email.trim().toLowerCase():"";
-      const loginId=typeof input.loginId==="string"?input.loginId.trim().toLowerCase():"";
+    input=await request.json() as Record<string,unknown>;
+    if(!input||typeof input!=="object"||Array.isArray(input))throw Error();
+  }catch{return json({error:"Invalid request."},400);}
+  const action=input.action,password=nonempty(input.password);
+  const returnTo=safeReturnPath(typeof input.returnTo==="string"?input.returnTo:"/");
+  if(password.length<8||password.length>128)
+    return json({error:"Password must be at least 8 characters (maximum 128)."},400);
+  try {
+    if(action==="register") {
+      const name=nonempty(input.name).trim();
+      const email=nonempty(input.email).trim().toLowerCase();
+      const loginId=nonempty(input.loginId).trim().toLowerCase();
       if(name.length<2||name.length>100||!validEmail(email)||!validId(loginId))
-        return json({error:"Enter your name, a valid email, and a User ID (3–32 letters, numbers or underscores)."},400);
-      const existing = await env.DB.prepare(
-        "SELECT user_id FROM email_credentials WHERE email=? OR login_id=? LIMIT 1"
-      ).bind(email,loginId).first();
-      if(existing)return json({error:"Email or User ID is already registered."},409);
+        return json({error:"Enter your full name, a valid email and a User ID (3–32 characters)."},400);
+
+      if(await readRecord(emailKey(email))||await readRecord(loginKey(loginId))||
+         await readLegacyCredential(email)||await readLegacyCredential(loginId))
+        return json({error:"Email or User ID is already registered."},409);
+
+      const userId="local:"+crypto.randomUUID();
       const salt=base64url(crypto.getRandomValues(new Uint8Array(16)));
       const hash=base64url(await derivedPassword(password,salt));
-      const userId="local:"+crypto.randomUUID();
+      const cred:Credential={user_id:userId,email,login_id:loginId,
+        display_name:name,password_salt:salt,password_hash:hash};
+      // All writes are one D1 transaction. No schema changes or new tables are needed.
+      // Conflicts on either lookup or accounts roll back the entire registration.
       try {
-        await env.DB.prepare(
-          "INSERT INTO email_credentials(user_id,email,login_id,display_name,password_salt,password_hash,created_at) " +
-          "VALUES(?,?,?,?,?,?,?)"
-        ).bind(userId,email,loginId,name,salt,hash,Date.now()).run();
-      }catch {return json({error:"Email or User ID is already registered."},409);}
-      try {
-        await getOrCreateLearnerAccount(userId,loginId);
-      }catch(e){
-        await env.DB.prepare("DELETE FROM email_credentials WHERE user_id=?").bind(userId).run();
-        return json({error:e instanceof Error?e.message:"Could not create your account."},409);
+        await env.DB.batch([
+          env.DB.prepare("INSERT INTO records(id,data) VALUES(?,?)")
+            .bind(emailKey(email),JSON.stringify({userId})),
+          env.DB.prepare("INSERT INTO records(id,data) VALUES(?,?)")
+            .bind(loginKey(loginId),JSON.stringify({userId})),
+          env.DB.prepare("INSERT INTO records(id,data) VALUES(?,?)")
+            .bind(userKey(userId),JSON.stringify(cred)),
+          env.DB.prepare(
+            "INSERT INTO accounts(id,student_id,username) "+NEXT_LEARNER_ID_SQL
+          ).bind(userId,loginId),
+        ]);
+      }catch(error) {
+        console.error("Vocab Station email registration transaction failed:",error);
+        return json({error:"Could not create this account. Check whether the email or User ID is already used, then retry."},409);
       }
-      const cookie=await setSession(userId,email,name);
+      const cookie=await createSession(userId,email,name);
       return json({ok:true,returnTo},201,cookie);
     }
     if(action==="login") {
-      const identifier=typeof input.identifier==="string"?input.identifier.trim().toLowerCase():"";
-      if(!identifier||identifier.length>254)return json({error:"Invalid User ID/email or password."},401);
-      const row=await env.DB.prepare(
-        "SELECT user_id,email,login_id,display_name,password_salt,password_hash FROM email_credentials " +
-        "WHERE email=? OR login_id=? LIMIT 1"
-      ).bind(identifier,identifier).first<Credential>();
-      // Use an actual KDF even for unknown accounts to limit timing-based enumeration.
-      const salt=row?.password_salt||base64url(new Uint8Array(16));
-      const candidate=await derivedPassword(password,salt);
-      const stored=row?Uint8Array.from(atob(row.password_hash.replace(/-/g,"+").replace(/_/g,"/")),c=>c.charCodeAt(0)):new Uint8Array(32);
-      if(!row||!equalConstantTime(candidate,stored))return json({error:"Invalid User ID/email or password."},401);
-      const cookie=await setSession(row.user_id,row.email,row.display_name);
+      const identifier=nonempty(input.identifier).trim().toLowerCase();
+      if(!identifier||identifier.length>254)
+        return json({error:"Invalid Email/User ID or password."},401);
+      const row=await findCredential(identifier);
+      const candidate=await derivedPassword(password,row?.password_salt||base64url(new Uint8Array(16)));
+      const hash=row?.password_hash||base64url(new Uint8Array(32));
+      const stored=Uint8Array.from(atob(hash.replace(/-/g,"+").replace(/_/g,"/")),c=>c.charCodeAt(0));
+      if(!row||!equalConstantTime(candidate,stored))
+        return json({error:"Invalid Email/User ID or password."},401);
+      const cookie=await createSession(row.user_id,row.email,row.display_name);
       return json({ok:true,returnTo},200,cookie);
     }
     return json({error:"Unknown action."},400);
-  }catch {
-    return json({error:"Authentication is temporarily unavailable. Please try again."},503);
+  }catch(error) {
+    // Log server details only, never passwords or account secrets.
+    console.error("Vocab Station account authentication failure:",error);
+    return json({error:"The account service could not complete the request. Please try again."},503);
   }
 }
