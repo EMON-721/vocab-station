@@ -99,6 +99,6 @@ export async function getSignedInUser(): Promise<SignedInUser | null> {
 
 export async function requireSignedInUser(returnTo: string): Promise<SignedInUser> {
   const user = await getSignedInUser();
-  if (!user) redirect(googleSignInPath(returnTo));
+  if (!user) redirect("/login?return_to=" + encodeURIComponent(safeReturnPath(returnTo)));
   return user;
 }
