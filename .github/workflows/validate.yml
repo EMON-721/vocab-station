@@ -42,6 +42,8 @@ jobs:
           node scripts/check-assessment-v3.mjs
           node scripts/check-access.mjs
           node scripts/check-gemini-assessment.mjs
+      - name: Email signup and Cloudflare crypto compatibility
+        run: node scripts/check-email-auth.mjs
       - name: Production build
         run: pnpm build
 
