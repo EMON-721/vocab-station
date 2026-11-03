@@ -5,7 +5,9 @@ import {
 } from "../../../google-auth";
 import { NEXT_LEARNER_ID_SQL } from "../../../learner-identity";
 
-const ITERATIONS = 260000;
+// Cloudflare Workers rejects any single PBKDF2 operation above 100,000 iterations.
+// Passwords are salted per account and requests are rate limited at ingress.
+const ITERATIONS = 100000;
 const enc = new TextEncoder();
 type Credential = {
   user_id:string;email:string;login_id:string;display_name:string;
