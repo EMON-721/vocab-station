@@ -95,6 +95,8 @@ export async function POST(request:Request):Promise<Response> {
       const hash=base64url(await derivedPassword(password,salt));
       const cred:Credential={user_id:userId,email,login_id:loginId,
         display_name:name,password_salt:salt,password_hash:hash};
+      const token=randomToken(),now=Date.now();
+      const sessionId=await sha256Hex(token);
       // All writes are one D1 transaction. No schema changes or new tables are needed.
       // Conflicts on either lookup or accounts roll back the entire registration.
       try {
@@ -108,13 +110,15 @@ export async function POST(request:Request):Promise<Response> {
           env.DB.prepare(
             "INSERT INTO accounts(id,student_id,username) "+NEXT_LEARNER_ID_SQL
           ).bind(userId,loginId),
+          env.DB.prepare(
+            "INSERT INTO auth_sessions(id,user_id,email,display_name,expires_at,created_at) VALUES(?,?,?,?,?,?)"
+          ).bind(sessionId,userId,email,name,now+SESSION_SECONDS*1000,now),
         ]);
       }catch(error) {
         console.error("Vocab Station email registration transaction failed:",error);
         return json({error:"Could not create this account. Check whether the email or User ID is already used, then retry."},409);
       }
-      const cookie=await createSession(userId,email,name);
-      return json({ok:true,returnTo},201,cookie);
+      return json({ok:true,returnTo},201,cookieHeader(SESSION_COOKIE,token,SESSION_SECONDS));
     }
     if(action==="login") {
       const identifier=nonempty(input.identifier).trim().toLowerCase();
