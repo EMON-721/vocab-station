@@ -1,10 +1,5 @@
 # Vocab Station
 
-## Administration
-
-The owner workspace manages shared vocabulary, bulk word assignment, learning schedules, learner access, exam overrides, messages and website branding. Protected changes are checked by the server. See [Administrator Handbook](ADMIN_GUIDE.md) for editing, content review and account-management steps.
-
-
 For study purposes.
 
 English vocabulary learning with Bengali meanings, example sentences, typing practice, personal sentence feedback, weekly mocks and required revision checkpoints.
@@ -19,7 +14,6 @@ English vocabulary learning with Bengali meanings, example sentences, typing pra
 - A sample mock; unanswered questions can be submitted; persisted results can be retrieved by retry without duplicate attempts.
 - Google Gemini sentence assessment with grammar, vocabulary-use and meaning feedback; local spelling/rule checks are also available.
 - Persistent learner profiles, unique usernames/IDs, private progress/history and personal vocabulary.
-- Administrator workspace for vocabulary, learners, assessments and messages.
 
 ## Stack and hosting
 
@@ -57,7 +51,7 @@ These checks cover curriculum integrity, duplicate rejection, stable original da
 
 ## Data and privacy
 
-Runtime credentials, environment values, user records, database exports, build output and dependencies are excluded from this source package. Configure runtime bindings separately. Administrator access still depends on the server-only ADMIN_EMAIL variable, now matched against a verified Google account email.
+Runtime credentials, environment values, user records, database exports, build output and dependencies are excluded from this source package. Configure runtime bindings separately. 
 
 ## Content and licences
 
@@ -67,14 +61,14 @@ See `SETUP.md` for configuration and `SOURCE_SNAPSHOT.json` for the source commi
 
 ## Repository access and public release
 
-Private visibility restricts source access to authorised accounts. If this repository becomes public, its committed source code can be read and copied; public visibility does not hide code. Public visitors do not gain permission to push changes to this repository or administer the live application. Only explicitly authorised collaborators can write to GitHub, and the deployed server separately checks administrator access. Keep tokens, runtime environment values and user database records outside Git. Review collaborators, branch rules and deployment credentials before making the repository public.
+Private visibility restricts source access to authorised accounts. If this repository becomes public, its committed source code can be read and copied; public visibility does not hide code. Public visitors do not gain permission to push changes to this repository or manage the deployed service. Only explicitly authorised collaborators can write to GitHub, and the application enforces its own access controls. Keep tokens, runtime environment values and user database records outside Git. Review collaborators, branch rules and deployment credentials before making the repository public.
 
 No branch-protection or repository permission setting is created by this README. Repository access controls must be configured in GitHub Settings.
 
 
 ## Gemini assessment
 
-Connect Google AI Studio securely in the administrator workspace. New standard tests include 30 objective questions and 5 scored sentence-writing questions. Learners can request AI feedback for up to four practice sentences. See `GEMINI_SETUP.md` for key setup and validation.
+Connect Google AI Studio securely using the project's documented configuration. New standard tests include 30 objective questions and 5 scored sentence-writing questions. Learners can request AI feedback for up to four practice sentences. See `GEMINI_SETUP.md` for key setup and validation.
 
 ## Website & repository links
 
